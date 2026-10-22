@@ -1,28 +1,50 @@
 import React from 'react';
-import { Send, Users, Award, Globe, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Send, Globe, GraduationCap, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
-import { communitiesData } from '../../data/communities';
 import './Achievements.css';
 
 export default function Achievements() {
-  const otherAchievements = [
+  const cards = [
     {
-      title: "B.Tech Computer Science Engineering",
-      desc: "Graduated with 8.51/10 CGPA from Galgotias University (2022–2026).",
-      icon: Award
+      id: "telegram-1",
+      metric: "48K+ Members",
+      subLabel: "Telegram Community",
+      desc: "Managed and grew a 48K+ member Telegram community, delivering regular tech updates and driving engagement.",
+      link: "https://t.me/themes4miui",
+      btnText: "Join Community →",
+      icon: Send,
+      isTelegram: true
     },
     {
-      title: "Full Stack Certification",
-      desc: "AICTE & EduSkills Foundation verified Full Stack Web Development Internship credential.",
-      icon: CheckCircle2
+      id: "telegram-2",
+      metric: "23K+ Members",
+      subLabel: "Telegram Community",
+      desc: "Managed and grew a 23K+ member Telegram community, sharing tech resources and helping learners.",
+      link: "https://t.me/MiuithemesX",
+      btnText: "Join Community →",
+      icon: Send,
+      isTelegram: true
     },
     {
-      title: "Blogger: HyperOSThemes.com",
-      desc: "Publisher covering mobile UI customization, themes and software tweaks.",
+      id: "academic-cgpa",
+      metric: "8.51 CGPA",
+      subLabel: "B. Tech CSE",
+      desc: "Graduated with 8.51 CGPA in B.Tech Computer Science Engineering from Galgotias University.",
+      link: null,
+      btnText: null,
+      icon: GraduationCap,
+      isTelegram: false
+    },
+    {
+      id: "blogger",
+      metric: "Google Blogger",
+      subLabel: "hyperosthemes.com",
+      desc: "Created and manage HyperOSThemes.com, sharing themes, resources and tech content.",
+      link: "https://hyperosthemes.com/",
+      btnText: "Visit Website →",
       icon: Globe,
-      link: "https://hyperosthemes.com",
-      linkLabel: "Visit hyperosthemes.com"
+      isTelegram: false
     }
   ];
 
@@ -31,78 +53,46 @@ export default function Achievements() {
       <div className="container">
         <SectionTitle
           title="Achievements & Communities"
-          subtitle="Tech community building, published content, and verified academic milestones."
+          subtitle="Community leadership, tech publishing, and verified academic milestones."
+          linkText="View All"
+          onLinkClick={() => window.open('https://hyperosthemes.com/', '_blank')}
         />
 
-        {/* Telegram Communities (Two Separate Cards: 48K+ & 23K+) */}
-        <div className="communities-grid">
-          {communitiesData.map((community, index) => (
-            <motion.div
-              key={community.id}
-              className="community-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <div>
-                <div className="community-header">
-                  <div className="community-icon-box">
-                    <Send size={22} />
-                  </div>
-                  <span className="community-badge">{community.role}</span>
-                </div>
-
-                <div className="community-count">{community.members}</div>
-                <h4 className="community-name">{community.name}</h4>
-                <p className="community-desc">{community.description}</p>
-              </div>
-
-              {community.link && (
-                <a
-                  href={community.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="community-link"
-                >
-                  <span>{community.linkText || 'Join Community →'}</span>
-                  <ArrowRight size={15} />
-                </a>
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Verified Achievements */}
-        <div className="other-achievements-grid">
-          {otherAchievements.map((item, idx) => {
-            const IconComp = item.icon;
+        <div className="achievements-grid-4">
+          {cards.map((card, index) => {
+            const IconComp = card.icon;
             return (
               <motion.div
-                key={idx}
-                className="achieve-mini-card"
-                initial={{ opacity: 0, y: 15 }}
+                key={card.id}
+                className="achievement-card"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.35, delay: idx * 0.08 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
               >
-                <div className="achieve-mini-icon">
-                  <IconComp size={18} />
+                <div className="achieve-card-top">
+                  <div className={`achieve-icon-wrapper ${card.isTelegram ? 'telegram' : ''}`}>
+                    <IconComp size={20} />
+                  </div>
+
+                  <div>
+                    <div className="achieve-main-metric">{card.metric}</div>
+                    <div className="achieve-sub-badge">{card.subLabel}</div>
+                  </div>
+
+                  <p className="achieve-card-desc">{card.desc}</p>
                 </div>
-                <div className="achieve-mini-info">
-                  <h4 className="achieve-mini-title">{item.title}</h4>
-                  <p className="achieve-mini-desc">{item.desc}</p>
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="achieve-mini-link"
-                    >
-                      {item.linkLabel}
-                    </a>
-                  )}
-                </div>
+
+                {card.link && card.btnText && (
+                  <a
+                    href={card.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="achieve-action-btn"
+                  >
+                    <span>{card.btnText}</span>
+                  </a>
+                )}
               </motion.div>
             );
           })}

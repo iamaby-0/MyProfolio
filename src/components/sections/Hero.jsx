@@ -14,19 +14,17 @@ const qualityIcons = {
   Users2: Users2
 };
 
-export default function Hero({ onProjectsClick, onContactClick }) {
+export default function Hero({ onProjectsClick }) {
   const {
     eyebrow,
     heading,
     highlightedName,
-    nickname,
-    handle,
     supportingRole,
     summary,
     qualities,
     codeSnippet,
-    availabilityText,
-    resumePath
+    resumePath,
+    resumeDriveUrl
   } = profileData;
 
   const headingBefore = heading.replace(highlightedName, '');
@@ -46,7 +44,7 @@ export default function Hero({ onProjectsClick, onContactClick }) {
             <div className="hero-badge-row">
               <span className="hero-badge">
                 <span className="hero-badge-diamond">◆</span>
-                {eyebrow || 'SOFTWARE DEVELOPER · INDIA'}
+                {eyebrow || 'SOFTWARE DEVELOPER • INDIA'}
               </span>
             </div>
 
@@ -54,20 +52,6 @@ export default function Hero({ onProjectsClick, onContactClick }) {
             <h1 className="hero-heading">
               {headingBefore}
               <span className="hero-heading-name">{highlightedName}</span>
-              {nickname && (
-                <span
-                  style={{
-                    fontSize: '0.55em',
-                    fontWeight: 600,
-                    color: 'var(--text-secondary)',
-                    marginLeft: '10px',
-                    verticalAlign: 'middle',
-                    letterSpacing: '0.02em'
-                  }}
-                >
-                  ({nickname})
-                </span>
-              )}
             </h1>
 
             {/* Subtitle */}
@@ -97,7 +81,7 @@ export default function Hero({ onProjectsClick, onContactClick }) {
 
               <Button
                 variant="secondary"
-                href={resumePath}
+                href={resumePath || resumeDriveUrl}
                 download="Abrar_Ahmad_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -111,12 +95,6 @@ export default function Hero({ onProjectsClick, onContactClick }) {
             {/* Social Links Row */}
             <div className="hero-socials-wrapper">
               <SocialLinks showLabels={true} />
-            </div>
-
-            {/* Availability Indicator */}
-            <div className="hero-availability">
-              <span className="status-dot"></span>
-              <span>{availabilityText}</span>
             </div>
           </motion.div>
 
@@ -163,7 +141,7 @@ export default function Hero({ onProjectsClick, onContactClick }) {
               <div className="hero-portrait-container">
                 <img
                   src={avatarImg}
-                  alt="Abrar Ahmad (aby) Developer Avatar"
+                  alt="Abrar Ahmad Developer Avatar"
                   className="hero-portrait-img"
                   loading="eager"
                   width="280"
@@ -180,10 +158,6 @@ export default function Hero({ onProjectsClick, onContactClick }) {
                 <div style={{ paddingLeft: '14px' }}>
                   <span className="code-property">name:</span>{' '}
                   <span className="code-string">"{codeSnippet.name}"</span>,
-                </div>
-                <div style={{ paddingLeft: '14px' }}>
-                  <span className="code-property">handle:</span>{' '}
-                  <span className="code-string">"{handle}"</span>,
                 </div>
                 <div style={{ paddingLeft: '14px' }}>
                   <span className="code-property">role:</span>{' '}

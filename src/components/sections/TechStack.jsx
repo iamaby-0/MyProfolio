@@ -21,7 +21,7 @@ export default function TechStack() {
       <div className="container">
         <SectionTitle
           title="Tech Stack"
-          subtitle="Technologies and tools I work with."
+          subtitle="Technologies and tools I use to build software."
           linkText={showAllCategories ? 'Show Grid View' : 'View All Skills'}
           onLinkClick={() => setShowAllCategories(!showAllCategories)}
         />

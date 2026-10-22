@@ -7,20 +7,20 @@ export const projectsData = [
     id: "finance-tracker",
     title: "AI-Powered Finance Tracker",
     description:
-      "A full-stack personal finance application for managing expenses, income, budgets, and analytics, with AI-powered financial insights.",
+      "Full-stack finance tracker with expense, income, budget management, analytics and AI-powered insights.",
     thumbnail: financeImg,
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Groq API / Qwen AI", "Chart.js"],
+    tags: ["React.js", "Node.js", "MongoDB", "Groq API", "Chart.js"],
     liveUrl: "https://finance-tracker-demo.vercel.app",
     githubUrl: "https://github.com/iamaby-0",
     featured: true
   },
   {
     id: "interview-portal",
-    title: "AI-Driven Interview Portal",
+    title: "AI Driven Interview Portal",
     description:
-      "A real-time, voice-based AI interview platform designed to automate initial candidate screening using resume-aware questions and speech interaction.",
+      "Real-time voice-based AI interview platform for automated candidate screening.",
     thumbnail: interviewImg,
-    tags: ["React.js", "Google Gemini 1.5 Flash", "Deepgram Flux", "Deepgram Aura"],
+    tags: ["React.js", "Gemini AI", "Deepgram", "AI"],
     liveUrl: "https://interview-portal-demo.vercel.app",
     githubUrl: "https://github.com/iamaby-0",
     featured: true
@@ -29,9 +29,9 @@ export const projectsData = [
     id: "maths-doubt-solver",
     title: "Maths Doubt Solver",
     description:
-      "An AI-powered application that helps users solve mathematics problems with step-by-step explanations.",
+      "Solve math problems using AI with step-by-step explanations.",
     thumbnail: mathImg,
-    tags: ["React.js", "JavaScript", "Gemini API"],
+    tags: ["React.js", "AI", "Python", "Gemini API"],
     liveUrl: "https://math-solver-demo.vercel.app",
     githubUrl: "https://github.com/iamaby-0",
     featured: true

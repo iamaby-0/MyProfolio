@@ -23,19 +23,19 @@ export default function Footer({ onContactClick }) {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-top">
-          {/* Brand */}
+        <div className="footer-content-row">
+          {/* Left Brand & Tagline */}
           <div className="footer-brand">
             <a href="#home" className="nav-logo" onClick={() => handleScroll('home')}>
               <span className="nav-logo-brand">{logoBrand}</span>
               <span className="nav-logo-ext">.{logoExt}</span>
             </a>
-            <p className="footer-tagline">
+            <span className="footer-tagline">
               Building useful software, one problem at a time.
-            </p>
+            </span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Center Navigation Links */}
           <nav className="footer-nav" aria-label="Footer Navigation">
             <a href="#home" onClick={(e) => { e.preventDefault(); handleScroll('home'); }}>Home</a>
             <a href="#about" onClick={(e) => { e.preventDefault(); handleScroll('about'); }}>About</a>
@@ -45,18 +45,12 @@ export default function Footer({ onContactClick }) {
             <a href="#contact" onClick={(e) => { e.preventDefault(); handleScroll('contact'); }}>Contact</a>
           </nav>
 
-          {/* Social Icons */}
-          <SocialLinks compact showLabels={false} />
-        </div>
-
-        <div className="footer-bottom">
-          <p className="footer-copyright">
-            © {currentYear} Abrar Ahmad. All rights reserved.
-          </p>
-
-          <div className="footer-status-pill">
-            <span className="status-dot"></span>
-            <span>Open to software development opportunities</span>
+          {/* Right Social Icons and Copyright */}
+          <div className="footer-right">
+            <SocialLinks compact showLabels={false} />
+            <span className="footer-copyright">
+              © {currentYear} Abrar Ahmad. All rights reserved.
+            </span>
           </div>
         </div>
       </div>

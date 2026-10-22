@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Award, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Briefcase, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import { educationData } from '../../data/education';
@@ -13,7 +13,7 @@ export default function EducationExperience() {
     <section id="experience" className="edu-exp-section">
       <div className="container">
         <SectionTitle
-          title="Education & Experience"
+          title="Education"
           subtitle="Academic milestones and practical full-stack software engineering experience."
         />
 
@@ -27,10 +27,12 @@ export default function EducationExperience() {
             transition={{ duration: 0.4 }}
           >
             <div className="card-top-header">
-              <div className="card-top-icon">
-                <GraduationCap size={20} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div className="card-top-icon">
+                  <GraduationCap size={20} />
+                </div>
+                <h3 className="card-top-title">Education</h3>
               </div>
-              <h3 className="card-top-title">Education</h3>
             </div>
 
             <div className="edu-timeline">
@@ -64,11 +66,23 @@ export default function EducationExperience() {
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <div className="card-top-header">
-              <div className="card-top-icon">
-                <Briefcase size={20} />
+            <div className="card-top-header" style={{ justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div className="card-top-icon">
+                  <Briefcase size={20} />
+                </div>
+                <h3 className="card-top-title">Experience</h3>
               </div>
-              <h3 className="card-top-title">Experience</h3>
+
+              <a
+                href="#experience"
+                className="section-link"
+                style={{ fontSize: '0.84rem' }}
+                onClick={(e) => e.preventDefault()}
+              >
+                <span>View Experience</span>
+                <ArrowRight size={14} />
+              </a>
             </div>
 
             <div className="exp-body">
@@ -76,9 +90,8 @@ export default function EducationExperience() {
                 <h4 className="exp-role-title">{internship.role}</h4>
                 <div className="exp-org-row">
                   <span className="exp-org">{internship.organization}</span>
-                  <span className="exp-dates">{internship.duration}</span>
                 </div>
-                <p className="exp-location">{internship.location}</p>
+                <p className="exp-dates" style={{ marginTop: '2px' }}>{internship.duration}</p>
               </div>
 
               <ul className="exp-bullet-list">
@@ -88,11 +101,6 @@ export default function EducationExperience() {
                   </li>
                 ))}
               </ul>
-
-              <div className="exp-cert-badge">
-                <CheckCircle2 size={15} />
-                <span>AICTE & EduSkills Verified Certification</span>
-              </div>
             </div>
           </motion.div>
         </div>

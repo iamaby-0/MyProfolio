@@ -3,7 +3,8 @@ export const profileData = {
   nickname: "aby",
   handle: "@iamaby_0",
   logo: "Aby.Dev",
-  eyebrow: "SOFTWARE DEVELOPER · INDIA",
+  brand: "Aby.Dev",
+  eyebrow: "SOFTWARE DEVELOPER • INDIA",
   heading: "Hi, I'm Abrar Ahmad",
   highlightedName: "Abrar Ahmad",
   supportingRole: "Computer Science Engineering Graduate",
@@ -11,41 +12,37 @@ export const profileData = {
   university: "Galgotias University",
   graduationPeriod: "September 2022 – July 2026",
   cgpa: "8.51/10",
-  location: "Greater Noida, Uttar Pradesh, India",
-  hometownLocation: "Murar Bataraha, Bihar, India",
+  location: "Murar Bataraha, India",
+  collegeLocation: "Greater Noida, Uttar Pradesh, India",
   email: "abrarahmad.se@gmail.com",
   isOpenToWork: true,
-  availabilityText: "Open to software development opportunities",
+  availabilityText: "Available for opportunities",
   resumePath: "/resume.pdf",
+  resumeDriveUrl: "https://drive.google.com/file/d/10ldyKzdbhUh_y6EceIs-uGV3QxNQpOhy/view?usp=sharing",
   summary:
     "I build full-stack applications, backend systems and AI-powered products with clean, maintainable code. Skilled in Java, JavaScript, React.js, Node.js and MongoDB.",
   aboutExtended:
-    "Computer Science Engineering graduate from Galgotias University with a strong foundation in software development, data structures, algorithms, and database management. Skilled in Java, JavaScript, React.js, Node.js, and MongoDB, with hands-on experience building full-stack and AI-powered applications. Focused on solving complex problems and developing scalable, user-focused solutions.",
+    "I'm a Computer Science Engineering graduate who enjoys building practical software, solving technical problems and exploring new technologies. My work focuses on backend development, full-stack applications and AI-powered solutions.",
   socials: {
-    github: {
-      name: "GitHub",
-      url: "https://github.com/iamaby-0",
-      display: "github.com/iamaby-0"
-    },
-    leetcode: {
-      name: "LeetCode",
-      url: "https://leetcode.com/u/iamaby_0/",
-      display: "leetcode.com/u/iamaby_0"
-    },
     x: {
-      name: "X (Twitter)",
+      name: "X",
       url: "https://x.com/iamaby_0",
       display: "@iamaby_0"
     },
     instagram: {
       name: "Instagram",
       url: "https://www.instagram.com/iamaby_0/",
-      display: "instagram.com/iamaby_0"
+      display: "Instagram"
     },
-    linkedin: {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/abrar-ahmad",
-      display: "linkedin.com/in/abrar-ahmad"
+    github: {
+      name: "GitHub",
+      url: "https://github.com/iamaby-0",
+      display: "GitHub"
+    },
+    leetcode: {
+      name: "LeetCode",
+      url: "https://leetcode.com/u/iamaby_0/",
+      display: "LeetCode"
     },
     email: {
       name: "Email",
@@ -54,9 +51,9 @@ export const profileData = {
     }
   },
   codeSnippet: {
-    name: "Abrar Ahmad (aby)",
+    name: "Abrar Ahmad",
     role: "Software Developer",
-    skills: ["Java", "React", "Node.js"],
+    skills: ["Java", "React.js", "Node.js"],
     goal: "Build impactful products"
   },
   qualities: [
@@ -89,14 +86,10 @@ export const profileData = {
     },
     {
       id: "communities",
-      value: "48K + 23K",
+      value: "48K+ & 23K+",
       label: "Telegram Communities",
-      subValues: [
-        { name: "Community 1", count: "48K+ members" },
-        { name: "Community 2", count: "23K+ members" }
-      ],
       supporting: "Two separate tech communities",
-      icon: "Zap"
+      icon: "Users2"
     }
   ]
 };

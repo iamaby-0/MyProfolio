@@ -1,26 +1,25 @@
 import React from 'react';
-import { Cpu, BookOpen, Hammer, ArrowRight } from 'lucide-react';
+import { Send, Lightbulb, BookOpen, Rocket, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
-import Button from '../common/Button';
 import './AboutPreview.css';
 
 export default function AboutPreview({ onContactClick }) {
-  const features = [
+  const pillars = [
     {
       title: "Problem Solver",
-      desc: "Enjoys tackling programming challenges and developing practical, resilient solutions.",
-      icon: Cpu
+      desc: "I enjoy tackling programming challenges and developing practical solutions.",
+      icon: Lightbulb
     },
     {
       title: "Continuous Learner",
-      desc: "Continuously improves technical skills and explores new tools, frameworks, and architectures.",
+      desc: "Always exploring new technologies and improving my skills.",
       icon: BookOpen
     },
     {
       title: "Builder",
-      desc: "Enjoys transforming ideas into useful applications with clean, maintainable code.",
-      icon: Hammer
+      desc: "I enjoy turning ideas into useful applications that create real value.",
+      icon: Rocket
     }
   ];
 
@@ -29,48 +28,62 @@ export default function AboutPreview({ onContactClick }) {
       <div className="container">
         <SectionTitle
           title="A Little About Me"
-          subtitle="Engineering philosophy and foundational mindset."
+          subtitle="Engineering approach and core technical mindset."
         />
 
-        <motion.div
-          className="about-preview-card"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.4 }}
-        >
-          <p className="about-intro-text">
-            "I'm a Computer Science Engineering graduate who enjoys building practical software,
-            solving technical problems and exploring new technologies. My work focuses on backend
-            development, full-stack applications and AI-powered solutions."
-          </p>
+        <div className="about-preview-split">
+          {/* Left Intro Card */}
+          <motion.div
+            className="about-intro-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.4 }}
+          >
+            <div>
+              <div className="about-intro-icon-box">
+                <Send size={22} />
+              </div>
+              <p className="about-intro-body">
+                I'm a Computer Science Engineering graduate who enjoys building practical software,
+                solving technical problems and exploring new technologies. My work focuses on backend
+                development, full-stack applications and AI-powered solutions.
+              </p>
+            </div>
 
-          <div className="about-features-grid">
-            {features.map((feature, idx) => {
-              const IconComp = feature.icon;
+            <button
+              type="button"
+              className="about-more-btn"
+              onClick={onContactClick}
+            >
+              <span>More About Me</span>
+              <ArrowRight size={14} />
+            </button>
+          </motion.div>
+
+          {/* Right 3 Pillars Grid */}
+          <div className="about-pillars-grid">
+            {pillars.map((pillar, idx) => {
+              const IconComp = pillar.icon;
               return (
-                <div key={idx} className="about-feature-box">
-                  <div className="about-feature-icon">
-                    <IconComp size={20} />
+                <motion.div
+                  key={pillar.title}
+                  className="about-pillar-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                >
+                  <div className="about-pillar-icon">
+                    <IconComp size={22} />
                   </div>
-                  <h4 className="about-feature-title">{feature.title}</h4>
-                  <p className="about-feature-desc">{feature.desc}</p>
-                </div>
+                  <h3 className="about-pillar-title">{pillar.title}</h3>
+                  <p className="about-pillar-desc">{pillar.desc}</p>
+                </motion.div>
               );
             })}
           </div>
-
-          <div className="about-bottom-actions">
-            <Button
-              variant="outline-mint"
-              onClick={onContactClick}
-              icon={ArrowRight}
-              iconPosition="right"
-            >
-              Learn More About Me
-            </Button>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

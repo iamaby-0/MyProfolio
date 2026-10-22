@@ -16,7 +16,7 @@ export default function FeaturedProjects() {
       <div className="container">
         <SectionTitle
           title="Featured Projects"
-          subtitle="A selection of applications I've built and the problems they solve."
+          subtitle="Selected applications showcasing my work in full-stack development, backend engineering and AI integration."
           linkText="View All Projects"
           onLinkClick={handleViewAll}
         />
