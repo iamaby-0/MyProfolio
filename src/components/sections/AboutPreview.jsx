@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import './AboutPreview.css';
 
-export default function AboutPreview({ onContactClick }) {
+export default function AboutPreview({ onContactClick, onNavigateAbout }) {
   const pillars = [
     {
       title: "Problem Solver",
@@ -54,7 +54,7 @@ export default function AboutPreview({ onContactClick }) {
             <button
               type="button"
               className="about-more-btn"
-              onClick={onContactClick}
+              onClick={onNavigateAbout || onContactClick}
             >
               <span>More About Me</span>
               <ArrowRight size={14} />

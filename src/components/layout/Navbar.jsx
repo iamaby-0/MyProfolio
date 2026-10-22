@@ -12,11 +12,16 @@ const navItems = [
   { label: 'Contact', href: '#contact', id: 'contact' }
 ];
 
-export default function Navbar({ onContactClick }) {
-  const [activeSection, setActiveSection] = useState('home');
+export default function Navbar({ currentPage = 'home', onNavigate, onContactClick }) {
+  const [activeSection, setActiveSection] = useState(currentPage === 'about' ? 'about' : 'home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (currentPage === 'about') {
+      setActiveSection('about');
+      return;
+    }
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
       for (let i = navItems.length - 1; i >= 0; i--) {
@@ -31,14 +36,43 @@ export default function Navbar({ onContactClick }) {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPage]);
 
   const handleNavClick = (e, item) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
+    if (item.id === 'home') {
+      if (onNavigate) {
+        onNavigate('home');
+      } else {
+        window.location.hash = '#home';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (item.id === 'about') {
+      if (onNavigate) {
+        onNavigate('about');
+      } else {
+        window.location.hash = '#about';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     if (item.id === 'contact' && onContactClick) {
       onContactClick();
+    }
+
+    if (currentPage !== 'home' && onNavigate) {
+      onNavigate('home');
+      setTimeout(() => {
+        const element = document.getElementById(item.id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
     }
 
     const element = document.getElementById(item.id);
@@ -46,6 +80,8 @@ export default function Navbar({ onContactClick }) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const resumeLink = profileData.resumeDriveUrl || profileData.resumePath;
 
   return (
     <header className="navbar">
@@ -60,7 +96,11 @@ export default function Navbar({ onContactClick }) {
         <nav aria-label="Main Navigation">
           <ul className="nav-links-desktop">
             {navItems.map((item) => {
-              const isActive = activeSection === item.id;
+              const isActive =
+                currentPage === 'about'
+                  ? item.id === 'about'
+                  : activeSection === item.id;
+
               return (
                 <li
                   key={item.id}
@@ -82,8 +122,7 @@ export default function Navbar({ onContactClick }) {
         {/* Right CTA */}
         <div className="nav-actions">
           <a
-            href={profileData.resumePath}
-            download="Abrar_Ahmad_Resume.pdf"
+            href={resumeLink}
             className="nav-resume-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -108,7 +147,11 @@ export default function Navbar({ onContactClick }) {
       <div className={`nav-mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <ul className="nav-mobile-links">
           {navItems.map((item) => {
-            const isActive = activeSection === item.id;
+            const isActive =
+              currentPage === 'about'
+                ? item.id === 'about'
+                : activeSection === item.id;
+
             return (
               <li
                 key={item.id}
@@ -128,8 +171,7 @@ export default function Navbar({ onContactClick }) {
 
         <div className="nav-mobile-actions">
           <a
-            href={profileData.resumePath}
-            download="Abrar_Ahmad_Resume.pdf"
+            href={resumeLink}
             className="nav-resume-btn"
             target="_blank"
             rel="noopener noreferrer"

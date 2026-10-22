@@ -2,7 +2,7 @@ export const experienceData = [
   {
     role: "Web Full Stack Developer Intern",
     organization: "AICTE – EduSkills Foundation",
-    duration: "Oct 2024 – Dec 2024 | Remote, India",
+    duration: "Oct 2024 – Dec 2024",
     location: "Remote, India",
     points: [
       "Completed a 2-month virtual internship focused on full stack web development.",

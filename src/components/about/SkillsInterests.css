@@ -1,0 +1,175 @@
+.skills-interests-section {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.skills-interests-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.si-panel-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+}
+
+.si-panel-card:hover {
+  background-color: var(--bg-hover);
+  border-color: rgba(53, 233, 160, 0.35);
+}
+
+.si-panel-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+}
+
+/* Card A: Core Skills Grid */
+.core-skills-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.core-mini-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 6px;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.core-mini-item:hover {
+  border-color: var(--mint-primary);
+  transform: translateY(-2px);
+}
+
+.core-mini-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.si-view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--mint-primary);
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-top: auto;
+  transition: color var(--transition-fast);
+}
+
+.si-view-all-link:hover {
+  color: var(--mint-bright);
+}
+
+/* Card B: Areas of Interest */
+.interests-box-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.interest-item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 10px;
+  min-height: 85px;
+  transition: all var(--transition-fast);
+}
+
+.interest-item-box:hover {
+  border-color: rgba(53, 233, 160, 0.4);
+  background-color: rgba(18, 61, 50, 0.25);
+  transform: translateY(-2px);
+}
+
+.interest-item-icon {
+  color: var(--mint-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interest-item-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+/* Card C: What Drives Me */
+.drives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drive-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.drive-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--green-surface);
+  color: var(--mint-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.drive-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drive-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.drive-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .skills-interests-grid {
+    grid-template-columns: 1fr;
+  }
+}

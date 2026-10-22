@@ -3,16 +3,45 @@ import SocialLinks from '../common/SocialLinks';
 import { profileData } from '../../data/profile';
 import './Footer.css';
 
-export default function Footer({ onContactClick }) {
+export default function Footer({ currentPage = 'home', onNavigate, onContactClick }) {
   const currentYear = new Date().getFullYear();
 
-  const handleScroll = (id) => {
-    if (id === 'contact' && onContactClick) {
-      onContactClick();
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+
+    if (id === 'contact') {
+      if (onContactClick) onContactClick();
+      return;
     }
-    const elem = document.getElementById(id);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+
+    if (id === 'home') {
+      if (onNavigate) {
+        onNavigate('home');
+      } else {
+        window.location.hash = '#home';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    if (id === 'about') {
+      if (onNavigate) {
+        onNavigate('about');
+      } else {
+        window.location.hash = '#about';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    // Anchor sections on homepage: projects, skills, experience
+    if (currentPage !== 'home' && onNavigate) {
+      onNavigate('home', id);
+    } else {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -26,7 +55,7 @@ export default function Footer({ onContactClick }) {
         <div className="footer-content-row">
           {/* Left Brand & Tagline */}
           <div className="footer-brand">
-            <a href="#home" className="nav-logo" onClick={() => handleScroll('home')}>
+            <a href="#home" className="nav-logo" onClick={(e) => handleNavClick(e, 'home')}>
               <span className="nav-logo-brand">{logoBrand}</span>
               <span className="nav-logo-ext">.{logoExt}</span>
             </a>
@@ -37,12 +66,12 @@ export default function Footer({ onContactClick }) {
 
           {/* Center Navigation Links */}
           <nav className="footer-nav" aria-label="Footer Navigation">
-            <a href="#home" onClick={(e) => { e.preventDefault(); handleScroll('home'); }}>Home</a>
-            <a href="#about" onClick={(e) => { e.preventDefault(); handleScroll('about'); }}>About</a>
-            <a href="#projects" onClick={(e) => { e.preventDefault(); handleScroll('projects'); }}>Projects</a>
-            <a href="#skills" onClick={(e) => { e.preventDefault(); handleScroll('skills'); }}>Skills</a>
-            <a href="#experience" onClick={(e) => { e.preventDefault(); handleScroll('experience'); }}>Experience</a>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); handleScroll('contact'); }}>Contact</a>
+            <a href="#home" className={currentPage === 'home' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home')}>Home</a>
+            <a href="#about" className={currentPage === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About</a>
+            <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
+            <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
+            <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')}>Experience</a>
+            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
           </nav>
 
           {/* Right Social Icons and Copyright */}

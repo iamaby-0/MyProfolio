@@ -12,7 +12,7 @@ export const profileData = {
   university: "Galgotias University",
   graduationPeriod: "September 2022 – July 2026",
   cgpa: "8.51/10",
-  location: "Murar Bataraha, India",
+  location: "Greater Noida, Uttar Pradesh, India",
   collegeLocation: "Greater Noida, Uttar Pradesh, India",
   email: "abrarahmad.se@gmail.com",
   isOpenToWork: true,

@@ -11,7 +11,7 @@ import AboutPreview from '../components/sections/AboutPreview';
 import ContactCTA from '../components/sections/ContactCTA';
 import ContactModal from '../components/common/ContactModal';
 
-export default function Home() {
+export default function Home({ onNavigate }) {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const openContact = () => setIsContactModalOpen(true);
@@ -20,7 +20,11 @@ export default function Home() {
   return (
     <div className="homepage-root">
       {/* Section 1: Sticky Navigation Bar */}
-      <Navbar onContactClick={openContact} />
+      <Navbar
+        currentPage="home"
+        onNavigate={onNavigate}
+        onContactClick={openContact}
+      />
 
       <main>
         {/* Section 2: Hero Section */}
@@ -48,14 +52,21 @@ export default function Home() {
         <Achievements />
 
         {/* Section 8: About Me Preview */}
-        <AboutPreview onContactClick={openContact} />
+        <AboutPreview
+          onContactClick={openContact}
+          onNavigateAbout={() => onNavigate && onNavigate('about')}
+        />
 
         {/* Section 9: Contact Call to Action */}
         <ContactCTA onContactClick={openContact} />
       </main>
 
       {/* Section 10: Footer */}
-      <Footer onContactClick={openContact} />
+      <Footer
+        currentPage="home"
+        onNavigate={onNavigate}
+        onContactClick={openContact}
+      />
 
       {/* Interactive Contact Modal */}
       <ContactModal isOpen={isContactModalOpen} onClose={closeContact} />

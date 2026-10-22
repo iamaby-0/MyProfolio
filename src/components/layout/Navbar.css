@@ -67,6 +67,19 @@
   background-color: var(--nav-active-bg);
   border: 1px solid rgba(53, 233, 160, 0.25);
   font-weight: 600;
+  position: relative;
+}
+
+.nav-link-item.active a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background-color: var(--mint-primary);
+  border-radius: 2px;
 }
 
 /* Right Action */

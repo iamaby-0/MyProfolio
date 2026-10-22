@@ -36,10 +36,44 @@
   border-bottom: 1px solid rgba(36, 54, 59, 0.6);
 }
 
-.card-top-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
+.card-header-dot {
+  color: var(--mint-primary);
+  font-size: 0.85rem;
+}
+
+.card-top-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* About Variant Education Items */
+.edu-items-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.edu-item-row:first-child {
+  padding-top: 4px;
+}
+
+.edu-item-row:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.edu-item-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background-color: var(--green-surface);
   border: 1px solid rgba(53, 233, 160, 0.25);
   color: var(--mint-primary);
@@ -47,12 +81,44 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.card-top-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
+.edu-divider {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.edu-score-text {
+  color: var(--mint-primary);
+  font-weight: 600;
+}
+
+/* Experience Header in About Variant */
+.exp-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.exp-header-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--green-surface);
+  border: 1px solid rgba(53, 233, 160, 0.25);
+  color: var(--mint-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.edu-exp-section.about-variant {
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 
 /* Timeline in Education Card */
