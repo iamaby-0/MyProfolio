@@ -1,0 +1,191 @@
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: rgba(11, 17, 20, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contact-modal-window {
+  background-color: var(--bg-nav);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(53, 233, 160, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-modal-header {
+  padding: 24px 24px 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-modal-title-diamond {
+  color: var(--mint-primary);
+}
+
+.contact-modal-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.contact-modal-close {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.contact-modal-close:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--mint-primary);
+}
+
+.contact-modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Quick copy email box */
+.contact-quick-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  gap: 12px;
+}
+
+.contact-email-text {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--mint-primary);
+}
+
+.contact-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  background-color: var(--green-surface);
+  border: 1px solid rgba(53, 233, 160, 0.3);
+  color: var(--mint-primary);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.contact-copy-btn:hover {
+  background-color: var(--mint-primary);
+  color: #0B1114;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--mint-primary);
+  box-shadow: 0 0 10px rgba(53, 233, 160, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: var(--mint-primary);
+  color: #0B1114;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  margin-top: 4px;
+}
+
+.form-submit-btn:hover {
+  background-color: var(--mint-bright);
+  box-shadow: 0 4px 18px rgba(79, 255, 176, 0.4);
+}
+
+.contact-success-msg {
+  padding: 14px;
+  background-color: var(--green-surface);
+  border: 1px solid var(--mint-primary);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  text-align: center;
+}

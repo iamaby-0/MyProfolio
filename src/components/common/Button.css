@@ -1,0 +1,81 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+/* Primary Button (Mint Solid) */
+.btn-primary {
+  background-color: var(--mint-primary);
+  color: #0B1114;
+  border-color: var(--mint-primary);
+  box-shadow: 0 4px 14px rgba(53, 233, 160, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--mint-bright);
+  border-color: var(--mint-bright);
+  box-shadow: 0 6px 20px rgba(79, 255, 176, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (Outlined / Glass) */
+.btn-secondary {
+  background-color: rgba(18, 30, 34, 0.6);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--mint-primary);
+  color: var(--mint-bright);
+  transform: translateY(-2px);
+}
+
+/* Mint Outlined Button */
+.btn-outline-mint {
+  background-color: transparent;
+  color: var(--mint-primary);
+  border-color: var(--mint-primary);
+}
+
+.btn-outline-mint:hover {
+  background-color: rgba(53, 233, 160, 0.1);
+  color: var(--mint-bright);
+  border-color: var(--mint-bright);
+  transform: translateY(-2px);
+}
+
+/* Small Button (for project cards) */
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.84rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Icon rotation on hover */
+.btn:hover .btn-icon-arrow {
+  transform: translateX(3px);
+}
+
+.btn-icon-arrow {
+  transition: transform var(--transition-fast);
+}

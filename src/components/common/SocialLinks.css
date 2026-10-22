@@ -1,0 +1,55 @@
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.social-link-item:hover {
+  color: var(--mint-primary);
+  transform: translateY(-1px);
+}
+
+.social-link-item svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.social-link-item:hover svg {
+  transform: scale(1.1);
+}
+
+/* Compact mode for footer */
+.social-links.compact {
+  gap: 12px;
+}
+
+.social-links.compact .social-label {
+  display: none;
+}
+
+.social-links.compact .social-link-item {
+  padding: 8px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+}
+
+.social-links.compact .social-link-item:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--mint-primary);
+}

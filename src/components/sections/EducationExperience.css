@@ -1,0 +1,222 @@
+.edu-exp-section {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.edu-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.edu-exp-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-exp-card:hover {
+  background-color: var(--bg-hover);
+  border-color: rgba(53, 233, 160, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-top-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(36, 54, 59, 0.6);
+}
+
+.card-top-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background-color: var(--green-surface);
+  border: 1px solid rgba(53, 233, 160, 0.25);
+  color: var(--mint-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-top-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Timeline in Education Card */
+.edu-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.edu-timeline-item {
+  display: flex;
+  gap: 14px;
+  position: relative;
+}
+
+.edu-dot-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.edu-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--mint-primary);
+  box-shadow: 0 0 8px rgba(53, 233, 160, 0.6);
+}
+
+.edu-dot.muted {
+  background-color: var(--border-color);
+  box-shadow: none;
+}
+
+.edu-line {
+  flex-grow: 1;
+  width: 2px;
+  background-color: var(--border-color);
+  margin-top: 6px;
+  min-height: 24px;
+}
+
+.edu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.edu-institution {
+  font-size: 0.88rem;
+  color: var(--mint-primary);
+  font-weight: 500;
+}
+
+.edu-details {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+
+.edu-badge-score {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background-color: var(--green-surface);
+  color: var(--mint-primary);
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
+/* Experience Card Body */
+.exp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exp-role-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.exp-org-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-org {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--mint-primary);
+}
+
+.exp-dates {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.exp-location {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.exp-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.exp-bullet-item {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.exp-bullet-item::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--mint-primary);
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.exp-cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(18, 61, 50, 0.4);
+  border: 1px solid rgba(53, 233, 160, 0.25);
+  color: var(--mint-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .edu-exp-grid {
+    grid-template-columns: 1fr;
+  }
+}

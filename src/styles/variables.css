@@ -1,0 +1,44 @@
+:root {
+  /* Exact Color Palette */
+  --bg-main: #0B1114;
+  --bg-nav: #101A1D;
+  --bg-card: #121E22;
+  --bg-elevated: #18272C;
+  --bg-hover: #203238;
+  --border-color: #24363B;
+
+  /* Text Colors */
+  --text-primary: #F1F5F4;
+  --text-secondary: #A5B4B8;
+  --text-muted: #71848A;
+
+  /* Brand & Accent Colors */
+  --mint-primary: #35E9A0;
+  --mint-bright: #4FFFB0;
+  --mint-dark: #087F5B;
+  --green-surface: #123D32;
+  --nav-active-bg: #15372F;
+
+  /* Glows & Gradients */
+  --mint-glow-sm: 0 0 16px rgba(53, 233, 160, 0.18);
+  --mint-glow-md: 0 0 28px rgba(53, 233, 160, 0.25);
+  --mint-glow-lg: 0 0 45px rgba(53, 233, 160, 0.35);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Container & Spacing */
+  --container-max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
