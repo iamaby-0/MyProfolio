@@ -13,12 +13,12 @@ const navItems = [
 ];
 
 export default function Navbar({ currentPage = 'home', onNavigate, onContactClick }) {
-  const [activeSection, setActiveSection] = useState(currentPage === 'about' ? 'about' : 'home');
+  const [activeSection, setActiveSection] = useState(currentPage);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (currentPage === 'about') {
-      setActiveSection('about');
+    if (currentPage === 'about' || currentPage === 'projects') {
+      setActiveSection(currentPage);
       return;
     }
 
@@ -62,6 +62,16 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
       return;
     }
 
+    if (item.id === 'projects') {
+      if (onNavigate) {
+        onNavigate('projects');
+      } else {
+        window.location.hash = '#projects';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     if (item.id === 'contact' && onContactClick) {
       onContactClick();
     }
@@ -99,6 +109,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
               const isActive =
                 currentPage === 'about'
                   ? item.id === 'about'
+                  : currentPage === 'projects'
+                  ? item.id === 'projects'
                   : activeSection === item.id;
 
               return (
@@ -150,6 +162,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
             const isActive =
               currentPage === 'about'
                 ? item.id === 'about'
+                : currentPage === 'projects'
+                ? item.id === 'projects'
                 : activeSection === item.id;
 
             return (

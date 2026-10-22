@@ -1,15 +1,37 @@
 import React from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Star } from 'lucide-react';
 import { GithubIcon } from '../common/BrandIcons';
+import { TechIcons } from '../skills/TechIcons';
 import './ProjectCard.css';
 
 export default function ProjectCard({ project }) {
-  const { title, description, thumbnail, tags, liveUrl, githubUrl } = project;
+  const {
+    title,
+    description,
+    thumbnail,
+    featured,
+    technologies,
+    tags,
+    liveUrl,
+    githubUrl,
+    actionLabel
+  } = project;
+
+  const techList = technologies || tags || [];
+  const primaryUrl = liveUrl || githubUrl;
+  const isWebsite = !githubUrl && liveUrl;
 
   return (
     <article className="project-card">
       {/* 16:9 Thumbnail with subtle hover zoom */}
       <div className="project-thumb-wrapper">
+        {featured && (
+          <div className="project-featured-badge">
+            <Star size={11} fill="currentColor" />
+            <span>Featured</span>
+          </div>
+        )}
+
         <img
           src={thumbnail}
           alt={`${title} Interface Preview`}
@@ -23,12 +45,12 @@ export default function ProjectCard({ project }) {
       <div className="project-body">
         <div className="project-header-row">
           <h3 className="project-title">{title}</h3>
-          {liveUrl && (
+          {primaryUrl && (
             <a
-              href={liveUrl}
+              href={primaryUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Open ${title} live demo`}
+              aria-label={`Open ${title}`}
               className="project-ext-icon"
             >
               <ExternalLink size={16} />
@@ -40,28 +62,35 @@ export default function ProjectCard({ project }) {
 
         {/* Technology Badges */}
         <div className="project-tags">
-          {tags.map((tag) => (
-            <span key={tag} className="project-tag">
-              {tag}
-            </span>
-          ))}
+          {techList.map((tech) => {
+            const IconComp = TechIcons[tech];
+            return (
+              <span key={tech} className="project-tag">
+                {IconComp && (
+                  <span className="project-tag-icon">
+                    <IconComp />
+                  </span>
+                )}
+                <span>{tech}</span>
+              </span>
+            );
+          })}
         </div>
 
         {/* Aligned Action Buttons */}
         <div className="project-actions">
-          {liveUrl && (
+          {primaryUrl && (
             <a
-              href={liveUrl}
+              href={primaryUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="project-btn-demo"
             >
-              <span>Live Demo</span>
-              <ArrowRight size={14} />
+              <span>{actionLabel || (liveUrl ? 'Live Demo →' : 'View Source →')}</span>
             </a>
           )}
 
-          {githubUrl && (
+          {githubUrl && !isWebsite && liveUrl && (
             <a
               href={githubUrl}
               target="_blank"
@@ -77,3 +106,4 @@ export default function ProjectCard({ project }) {
     </article>
   );
 }
+

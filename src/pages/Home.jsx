@@ -40,7 +40,7 @@ export default function Home({ onNavigate }) {
         <QuickStats />
 
         {/* Section 4: Featured Projects */}
-        <FeaturedProjects />
+        <FeaturedProjects onNavigate={onNavigate} />
 
         {/* Section 5: Technology Stack */}
         <TechStack />

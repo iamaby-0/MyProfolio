@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
+import Projects from './pages/Projects';
 
 function App() {
   // Determine initial page from hash
@@ -8,6 +9,9 @@ function App() {
     const hash = window.location.hash.toLowerCase();
     if (hash.startsWith('#about')) {
       return 'about';
+    }
+    if (hash.startsWith('#projects')) {
+      return 'projects';
     }
     return 'home';
   };
@@ -27,6 +31,10 @@ function App() {
       document.title = 'About Me | Aby.Dev — Abrar Ahmad';
       metaDesc.content =
         'Learn about Abrar Ahmad, the developer behind Aby.Dev, including his Computer Science education, full-stack internship, technical skills, projects and interests.';
+    } else if (currentPage === 'projects') {
+      document.title = 'Projects | Aby.Dev — Abrar Ahmad';
+      metaDesc.content =
+        'Explore software projects by Abrar Ahmad, including full-stack applications, backend development, AI-powered products, mobile apps and web platforms.';
     } else {
       document.title = 'Aby.Dev — Abrar Ahmad | Software Developer';
       metaDesc.content =
@@ -40,6 +48,9 @@ function App() {
       const hash = window.location.hash.toLowerCase();
       if (hash.startsWith('#about')) {
         setCurrentPage('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.startsWith('#projects')) {
+        setCurrentPage('projects');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
@@ -55,6 +66,10 @@ function App() {
     if (page === 'about') {
       setCurrentPage('about');
       window.location.hash = '#about';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'projects') {
+      setCurrentPage('projects');
+      window.location.hash = '#projects';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setCurrentPage('home');
@@ -79,6 +94,8 @@ function App() {
     <div className="app-container">
       {currentPage === 'about' ? (
         <About onNavigate={handleNavigate} />
+      ) : currentPage === 'projects' ? (
+        <Projects onNavigate={handleNavigate} />
       ) : (
         <Home onNavigate={handleNavigate} />
       )}

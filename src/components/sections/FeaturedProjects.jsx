@@ -6,10 +6,16 @@ import { projectsData } from '../../data/projects';
 import { profileData } from '../../data/profile';
 import './FeaturedProjects.css';
 
-export default function FeaturedProjects() {
+export default function FeaturedProjects({ onNavigate }) {
   const handleViewAll = () => {
-    window.open(profileData.socials.github.url, '_blank', 'noopener,noreferrer');
+    if (onNavigate) {
+      onNavigate('projects');
+    } else {
+      window.location.hash = '#projects';
+    }
   };
+
+  const featuredProjects = projectsData.filter((p) => p.featured);
 
   return (
     <section id="projects" className="featured-projects-section">
@@ -22,7 +28,7 @@ export default function FeaturedProjects() {
         />
 
         <div className="projects-grid">
-          {projectsData.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
