@@ -1,11 +1,14 @@
 export const journeyMilestones = [
   {
+    id: "journey-2018",
     year: "2018",
     title: "Started School",
+    subtitle: "Primary & Middle School",
     description: "Imperial Public School, Hathwa",
     icon: "BookOpen"
   },
   {
+    id: "journey-2019",
     year: "2019",
     title: "Completed 10th",
     subtitle: "Completed Secondary School",
@@ -13,6 +16,7 @@ export const journeyMilestones = [
     icon: "CheckCircle"
   },
   {
+    id: "journey-2021",
     year: "2021",
     title: "Completed 12th",
     subtitle: "Higher Secondary",
@@ -20,6 +24,7 @@ export const journeyMilestones = [
     icon: "Award"
   },
   {
+    id: "journey-2022",
     year: "2022",
     title: "Joined B.Tech",
     subtitle: "Started Computer Science",
@@ -27,13 +32,23 @@ export const journeyMilestones = [
     icon: "GraduationCap"
   },
   {
+    id: "journey-2024",
     year: "2024",
-    title: "Internship",
-    subtitle: "Full Stack Development",
-    description: "AICTE – EduSkills Web Full Stack Developer Intern",
+    title: "Web Full Stack Developer Intern",
+    subtitle: "Virtual Internship",
+    description: "AICTE – EduSkills",
     icon: "Briefcase"
   },
   {
+    id: "journey-2026-intern",
+    year: "2026",
+    title: "Java Full Stack Developer Intern",
+    subtitle: "Virtual Internship",
+    description: "AICTE – EduSkills Academy",
+    icon: "Briefcase"
+  },
+  {
+    id: "journey-2026-grad",
     year: "2026",
     title: "Graduation",
     subtitle: "B.Tech CSE Graduate",
