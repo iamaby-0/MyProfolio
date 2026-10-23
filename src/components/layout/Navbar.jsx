@@ -17,7 +17,12 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (currentPage === 'about' || currentPage === 'projects' || currentPage === 'skills') {
+    if (
+      currentPage === 'about' ||
+      currentPage === 'projects' ||
+      currentPage === 'skills' ||
+      currentPage === 'experience'
+    ) {
       setActiveSection(currentPage);
       return;
     }
@@ -82,6 +87,16 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
       return;
     }
 
+    if (item.id === 'experience') {
+      if (onNavigate) {
+        onNavigate('experience');
+      } else {
+        window.location.hash = '#experience';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     if (item.id === 'contact' && onContactClick) {
       onContactClick();
     }
@@ -123,6 +138,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
                   ? item.id === 'projects'
                   : currentPage === 'skills'
                   ? item.id === 'skills'
+                  : currentPage === 'experience'
+                  ? item.id === 'experience'
                   : activeSection === item.id;
 
               return (
@@ -178,6 +195,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
                 ? item.id === 'projects'
                 : currentPage === 'skills'
                 ? item.id === 'skills'
+                : currentPage === 'experience'
+                ? item.id === 'experience'
                 : activeSection === item.id;
 
             return (

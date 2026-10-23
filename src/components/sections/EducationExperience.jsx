@@ -95,7 +95,14 @@ export default function EducationExperience({ isAboutPage = false }) {
                 href="#experience"
                 className="section-link"
                 style={{ fontSize: '0.84rem' }}
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigate) {
+                    onNavigate('experience');
+                  } else {
+                    window.location.hash = '#experience';
+                  }
+                }}
               >
                 <span>View Details</span>
                 <ArrowRight size={14} />

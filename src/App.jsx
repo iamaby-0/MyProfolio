@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
+import Experience from './pages/Experience';
 
 function App() {
   // Determine initial page from hash
@@ -16,6 +17,9 @@ function App() {
     }
     if (hash.startsWith('#skills')) {
       return 'skills';
+    }
+    if (hash.startsWith('#experience')) {
+      return 'experience';
     }
     return 'home';
   };
@@ -43,6 +47,10 @@ function App() {
       document.title = 'Skills | Aby.Dev — Abrar Ahmad';
       metaDesc.content =
         'Technical skills, backend frameworks, programming languages, databases, developer tools, and computer science fundamentals of Abrar Ahmad (Aby.Dev).';
+    } else if (currentPage === 'experience') {
+      document.title = 'Experience & Internships | Aby.Dev';
+      metaDesc.content =
+        'Explore the virtual internship experience and certified training of Abrar Ahmad (Aby.Dev) in Java Full Stack Development and Web Full Stack Development through AICTE-EduSkills.';
     } else {
       document.title = 'Aby.Dev — Abrar Ahmad | Software Developer';
       metaDesc.content =
@@ -62,6 +70,9 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash.startsWith('#skills')) {
         setCurrentPage('skills');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.startsWith('#experience')) {
+        setCurrentPage('experience');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
@@ -85,6 +96,10 @@ function App() {
     } else if (page === 'skills') {
       setCurrentPage('skills');
       window.location.hash = '#skills';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'experience') {
+      setCurrentPage('experience');
+      window.location.hash = '#experience';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setCurrentPage('home');
@@ -113,6 +128,8 @@ function App() {
         <Projects onNavigate={handleNavigate} />
       ) : currentPage === 'skills' ? (
         <Skills onNavigate={handleNavigate} />
+      ) : currentPage === 'experience' ? (
+        <Experience onNavigate={handleNavigate} />
       ) : (
         <Home onNavigate={handleNavigate} />
       )}

@@ -36,7 +36,7 @@ export default function About({ onNavigate }) {
         <JourneyTimeline />
 
         {/* Section 5: Education and Experience Cards */}
-        <EducationExperience isAboutPage={true} />
+        <EducationExperience isAboutPage={true} onNavigate={onNavigate} />
 
         {/* Section 6: Skills and Interests */}
         <SkillsInterests onNavigate={onNavigate} />

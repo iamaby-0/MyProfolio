@@ -46,7 +46,7 @@ export default function Home({ onNavigate }) {
         <TechStack />
 
         {/* Section 6: Education and Experience Preview */}
-        <EducationExperience />
+        <EducationExperience onNavigate={onNavigate} />
 
         {/* Section 7: Achievements and Telegram Communities */}
         <Achievements />

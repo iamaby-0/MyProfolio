@@ -54,7 +54,17 @@ export default function Footer({ currentPage = 'home', onNavigate, onContactClic
       return;
     }
 
-    // Anchor sections on homepage: experience, contact
+    if (id === 'experience') {
+      if (onNavigate) {
+        onNavigate('experience');
+      } else {
+        window.location.hash = '#experience';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    // Anchor sections on homepage: contact
     if (currentPage !== 'home' && onNavigate) {
       onNavigate('home', id);
     } else {
@@ -90,7 +100,7 @@ export default function Footer({ currentPage = 'home', onNavigate, onContactClic
             <a href="#about" className={currentPage === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About</a>
             <a href="#projects" className={currentPage === 'projects' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
             <a href="#skills" className={currentPage === 'skills' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
-            <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')}>Experience</a>
+            <a href="#experience" className={currentPage === 'experience' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'experience')}>Experience</a>
             <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
           </nav>
 
