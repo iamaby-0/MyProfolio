@@ -1,0 +1,370 @@
+.skills-hero-section {
+  padding-top: clamp(36px, 5vw, 65px);
+  padding-bottom: clamp(30px, 4vw, 45px);
+  position: relative;
+  overflow: visible;
+}
+
+.skills-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 60px);
+}
+
+.skills-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+}
+
+.skills-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mint-primary);
+  text-transform: uppercase;
+}
+
+.skills-eyebrow-dot {
+  font-size: 0.75rem;
+}
+
+.skills-hero-heading {
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.highlight-mint {
+  color: var(--mint-primary);
+}
+
+.skills-hero-subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.skills-hero-desc {
+  font-size: clamp(0.92rem, 1.2vw, 1rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 580px;
+}
+
+/* 4 Compact Statistics Underneath */
+.skills-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.skills-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.skills-stat-card:hover {
+  background-color: var(--bg-hover);
+  border-color: rgba(53, 233, 160, 0.4);
+  transform: translateY(-2px);
+}
+
+.skills-stat-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--green-surface);
+  color: var(--mint-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skills-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-stat-value {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.skills-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Right Column: Visual Stage */
+.skills-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-laptop-stage {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.skills-laptop-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(53, 233, 160, 0.28);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+  background-color: #0B1114;
+}
+
+.skills-laptop-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 60%, rgba(53, 233, 160, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.skills-laptop-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating Technology Pills */
+.skills-floating-pill {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: rgba(16, 26, 29, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(53, 233, 160, 0.35);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.skills-floating-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--mint-primary);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 14px rgba(53, 233, 160, 0.2);
+}
+
+.pill-icon {
+  color: var(--mint-primary);
+}
+
+.pill-backend {
+  top: 16px;
+  left: -14px;
+}
+
+.pill-ai {
+  top: 74px;
+  left: -6px;
+}
+
+.pill-systems {
+  bottom: 24px;
+  left: -12px;
+}
+
+/* Code Editor Snippet Overlay */
+.skills-code-editor-card {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  z-index: 6;
+  background-color: rgba(14, 22, 25, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(53, 233, 160, 0.3);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65), 0 0 16px rgba(53, 233, 160, 0.12);
+  max-width: 255px;
+}
+
+.code-editor-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.editor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background-color: #FF5F56;
+}
+
+.dot-yellow {
+  background-color: #FFBD2E;
+}
+
+.dot-green {
+  background-color: #27C93F;
+}
+
+.editor-filename {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.code-editor-body {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.48;
+  color: var(--text-secondary);
+}
+
+.code-indent {
+  padding-left: 12px;
+}
+
+.code-kw {
+  color: #C58AF9;
+  font-weight: 600;
+}
+
+.code-var {
+  color: #8AB4F8;
+}
+
+.code-prop {
+  color: #F1F5F4;
+}
+
+.code-str {
+  color: #35E9A0;
+}
+
+/* Handwritten Annotation */
+.skills-hero-annotation {
+  position: absolute;
+  top: -36px;
+  right: -6px;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  transform: rotate(4deg);
+}
+
+.skills-annotation-text {
+  font-family: 'Caveat', 'Segoe Script', cursive, sans-serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--mint-primary);
+  line-height: 1.1;
+  text-shadow: 0 0 12px rgba(53, 233, 160, 0.45);
+  white-space: nowrap;
+}
+
+.skills-annotation-arrow {
+  width: 44px;
+  height: 24px;
+  margin-top: -2px;
+  margin-right: 18px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .skills-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .skills-hero-visual {
+    order: -1;
+  }
+
+  .skills-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-code-editor-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    max-width: 100%;
+    margin-top: 14px;
+  }
+
+  .skills-hero-annotation {
+    top: -28px;
+    right: 0;
+  }
+
+  .skills-annotation-text {
+    font-size: 1rem;
+  }
+
+  .skills-floating-pill {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+
+  .pill-backend {
+    left: 4px;
+    top: 6px;
+  }
+
+  .pill-ai {
+    left: 12px;
+    top: 50px;
+  }
+
+  .pill-systems {
+    left: 8px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .skills-stats-row {
+    grid-template-columns: 1fr;
+  }
+}

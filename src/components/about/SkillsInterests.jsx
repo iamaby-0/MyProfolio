@@ -82,7 +82,7 @@ export default function SkillsInterests({ onNavigate }) {
               onClick={(e) => {
                 e.preventDefault();
                 if (onNavigate) {
-                  onNavigate('home', 'skills');
+                  onNavigate('skills');
                 } else {
                   window.location.hash = '#skills';
                 }

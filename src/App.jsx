@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import Skills from './pages/Skills';
 
 function App() {
   // Determine initial page from hash
@@ -12,6 +13,9 @@ function App() {
     }
     if (hash.startsWith('#projects')) {
       return 'projects';
+    }
+    if (hash.startsWith('#skills')) {
+      return 'skills';
     }
     return 'home';
   };
@@ -35,6 +39,10 @@ function App() {
       document.title = 'Projects | Aby.Dev — Abrar Ahmad';
       metaDesc.content =
         'Explore software projects by Abrar Ahmad, including full-stack applications, backend development, AI-powered products, mobile apps and web platforms.';
+    } else if (currentPage === 'skills') {
+      document.title = 'Skills | Aby.Dev — Abrar Ahmad';
+      metaDesc.content =
+        'Technical skills, backend frameworks, programming languages, databases, developer tools, and computer science fundamentals of Abrar Ahmad (Aby.Dev).';
     } else {
       document.title = 'Aby.Dev — Abrar Ahmad | Software Developer';
       metaDesc.content =
@@ -51,6 +59,9 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash.startsWith('#projects')) {
         setCurrentPage('projects');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.startsWith('#skills')) {
+        setCurrentPage('skills');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
@@ -70,6 +81,10 @@ function App() {
     } else if (page === 'projects') {
       setCurrentPage('projects');
       window.location.hash = '#projects';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'skills') {
+      setCurrentPage('skills');
+      window.location.hash = '#skills';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setCurrentPage('home');
@@ -96,6 +111,8 @@ function App() {
         <About onNavigate={handleNavigate} />
       ) : currentPage === 'projects' ? (
         <Projects onNavigate={handleNavigate} />
+      ) : currentPage === 'skills' ? (
+        <Skills onNavigate={handleNavigate} />
       ) : (
         <Home onNavigate={handleNavigate} />
       )}
@@ -104,4 +121,3 @@ function App() {
 }
 
 export default App;
-

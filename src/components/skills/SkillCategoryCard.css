@@ -1,0 +1,118 @@
+.skill-cat-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.skill-cat-card:hover {
+  border-color: rgba(53, 233, 160, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.skill-cat-header {
+  margin-bottom: 20px;
+}
+
+.skill-cat-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.skill-cat-title-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.skill-cat-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mint-primary);
+  flex-shrink: 0;
+}
+
+.skill-cat-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skill-cat-count-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mint-primary);
+  background-color: rgba(53, 233, 160, 0.1);
+  border: 1px solid rgba(53, 233, 160, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.skill-cat-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Category Grid Layouts */
+.skill-cat-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.grid-cols-4-custom {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-3-custom {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tablet adjustments */
+@media (max-width: 900px) {
+  .grid-cols-4-custom {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .skill-cat-card {
+    padding: 20px 16px;
+  }
+
+  .skill-cat-title {
+    font-size: 1.05rem;
+  }
+
+  .grid-cols-4-custom,
+  .grid-cols-3-custom {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid-cols-4-custom,
+  .grid-cols-3-custom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
