@@ -21,7 +21,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
       currentPage === 'about' ||
       currentPage === 'projects' ||
       currentPage === 'skills' ||
-      currentPage === 'experience'
+      currentPage === 'experience' ||
+      currentPage === 'contact'
     ) {
       setActiveSection(currentPage);
       return;
@@ -97,8 +98,14 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
       return;
     }
 
-    if (item.id === 'contact' && onContactClick) {
-      onContactClick();
+    if (item.id === 'contact') {
+      if (onNavigate) {
+        onNavigate('contact');
+      } else {
+        window.location.hash = '#contact';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
 
     if (currentPage !== 'home' && onNavigate) {
@@ -140,6 +147,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
                   ? item.id === 'skills'
                   : currentPage === 'experience'
                   ? item.id === 'experience'
+                  : currentPage === 'contact'
+                  ? item.id === 'contact'
                   : activeSection === item.id;
 
               return (
@@ -197,6 +206,8 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
                 ? item.id === 'skills'
                 : currentPage === 'experience'
                 ? item.id === 'experience'
+                : currentPage === 'contact'
+                ? item.id === 'contact'
                 : activeSection === item.id;
 
             return (

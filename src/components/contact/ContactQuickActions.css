@@ -1,0 +1,110 @@
+.contact-quick-section {
+  padding-top: clamp(16px, 2.5vw, 24px);
+  padding-bottom: clamp(24px, 3.5vw, 36px);
+}
+
+.contact-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.contact-quick-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.contact-quick-card:hover {
+  background-color: var(--bg-hover);
+  border-color: rgba(53, 233, 160, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.quick-card-icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--green-surface);
+  color: var(--mint-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(53, 233, 160, 0.15);
+}
+
+.quick-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.quick-card-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.quick-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.quick-card-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--mint-primary);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: all var(--transition-fast);
+  word-break: break-all;
+}
+
+.quick-card-action-link:hover {
+  color: var(--mint-bright);
+}
+
+.quick-card-action-link:hover .quick-arrow {
+  transform: translateX(3px);
+}
+
+.quick-arrow {
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+/* Tablet Layout */
+@media (max-width: 1024px) {
+  .contact-quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+  .contact-quick-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-quick-card {
+    padding: 16px 14px;
+  }
+}

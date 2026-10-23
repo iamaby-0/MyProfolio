@@ -10,7 +10,12 @@ export default function Footer({ currentPage = 'home', onNavigate, onContactClic
     e.preventDefault();
 
     if (id === 'contact') {
-      if (onContactClick) onContactClick();
+      if (onNavigate) {
+        onNavigate('contact');
+      } else {
+        window.location.hash = '#contact';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       return;
     }
 
@@ -101,7 +106,7 @@ export default function Footer({ currentPage = 'home', onNavigate, onContactClic
             <a href="#projects" className={currentPage === 'projects' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
             <a href="#skills" className={currentPage === 'skills' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
             <a href="#experience" className={currentPage === 'experience' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'experience')}>Experience</a>
-            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
+            <a href="#contact" className={currentPage === 'contact' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
           </nav>
 
           {/* Right Social Icons and Copyright */}

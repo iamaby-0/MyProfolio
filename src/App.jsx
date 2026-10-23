@@ -4,6 +4,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Experience from './pages/Experience';
+import Contact from './pages/Contact';
 
 function App() {
   // Determine initial page from hash
@@ -20,6 +21,9 @@ function App() {
     }
     if (hash.startsWith('#experience')) {
       return 'experience';
+    }
+    if (hash.startsWith('#contact')) {
+      return 'contact';
     }
     return 'home';
   };
@@ -51,6 +55,10 @@ function App() {
       document.title = 'Experience & Internships | Aby.Dev';
       metaDesc.content =
         'Explore the virtual internship experience and certified training of Abrar Ahmad (Aby.Dev) in Java Full Stack Development and Web Full Stack Development through AICTE-EduSkills.';
+    } else if (currentPage === 'contact') {
+      document.title = 'Contact | Aby.Dev — Abrar Ahmad';
+      metaDesc.content =
+        'Contact Abrar Ahmad (Aby.Dev) — Java & Backend-Focused Software Developer. Reach out for software engineering opportunities, project collaborations, or technical inquiries.';
     } else {
       document.title = 'Aby.Dev — Abrar Ahmad | Software Developer';
       metaDesc.content =
@@ -73,6 +81,9 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash.startsWith('#experience')) {
         setCurrentPage('experience');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.startsWith('#contact')) {
+        setCurrentPage('contact');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
@@ -100,6 +111,10 @@ function App() {
     } else if (page === 'experience') {
       setCurrentPage('experience');
       window.location.hash = '#experience';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'contact') {
+      setCurrentPage('contact');
+      window.location.hash = '#contact';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setCurrentPage('home');
@@ -130,6 +145,8 @@ function App() {
         <Skills onNavigate={handleNavigate} />
       ) : currentPage === 'experience' ? (
         <Experience onNavigate={handleNavigate} />
+      ) : currentPage === 'contact' ? (
+        <Contact onNavigate={handleNavigate} />
       ) : (
         <Home onNavigate={handleNavigate} />
       )}

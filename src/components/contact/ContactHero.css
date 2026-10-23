@@ -1,0 +1,300 @@
+.contact-hero-section {
+  padding-top: clamp(36px, 5vw, 65px);
+  padding-bottom: clamp(24px, 3.5vw, 40px);
+  position: relative;
+  overflow: visible;
+}
+
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 60px);
+}
+
+.contact-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mint-primary);
+  text-transform: uppercase;
+}
+
+.contact-eyebrow-dot {
+  font-size: 0.75rem;
+}
+
+.contact-hero-heading {
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.highlight-mint {
+  color: var(--mint-primary);
+}
+
+.contact-hero-desc {
+  font-size: clamp(0.94rem, 1.25vw, 1.05rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+
+/* Right Column: Visual Stage */
+.contact-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-laptop-stage {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-laptop-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(53, 233, 160, 0.28);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+  background-color: #0B1114;
+}
+
+.contact-laptop-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 60%, rgba(53, 233, 160, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.contact-laptop-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating Technology Pills */
+.contact-floating-pill {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: rgba(16, 26, 29, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(53, 233, 160, 0.35);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.contact-floating-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--mint-primary);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 14px rgba(53, 233, 160, 0.2);
+}
+
+.contact-pill-icon {
+  color: var(--mint-primary);
+}
+
+.pill-jobs {
+  top: 14px;
+  left: -16px;
+}
+
+.pill-collab {
+  top: 72px;
+  left: -8px;
+}
+
+.pill-discussion {
+  bottom: 24px;
+  left: -14px;
+}
+
+/* Code Editor Snippet Overlay */
+.contact-code-editor-card {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  z-index: 6;
+  background-color: rgba(14, 22, 25, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(53, 233, 160, 0.3);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65), 0 0 16px rgba(53, 233, 160, 0.12);
+  max-width: 255px;
+}
+
+.contact-code-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background-color: #FF5F56;
+}
+
+.dot-yellow {
+  background-color: #FFBD2E;
+}
+
+.dot-green {
+  background-color: #27C93F;
+}
+
+.contact-filename {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.contact-code-body {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.48;
+  color: var(--text-secondary);
+}
+
+.code-indent {
+  padding-left: 12px;
+}
+
+.code-kw {
+  color: #C58AF9;
+  font-weight: 600;
+}
+
+.code-var {
+  color: #8AB4F8;
+}
+
+.code-prop {
+  color: #F1F5F4;
+}
+
+.code-str {
+  color: #35E9A0;
+}
+
+/* Handwritten Annotation */
+.contact-hero-annotation {
+  position: absolute;
+  top: -36px;
+  right: -6px;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  transform: rotate(4deg);
+}
+
+.contact-annotation-text {
+  font-family: 'Caveat', 'Segoe Script', cursive, sans-serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--mint-primary);
+  line-height: 1.1;
+  text-shadow: 0 0 12px rgba(53, 233, 160, 0.45);
+  white-space: nowrap;
+}
+
+.contact-annotation-arrow {
+  width: 44px;
+  height: 24px;
+  margin-top: -2px;
+  margin-right: 18px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-hero-visual {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-code-editor-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    max-width: 100%;
+    margin-top: 14px;
+  }
+
+  .contact-hero-annotation {
+    top: -28px;
+    right: 0;
+  }
+
+  .contact-annotation-text {
+    font-size: 1rem;
+  }
+
+  .contact-floating-pill {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+
+  .pill-jobs {
+    left: 4px;
+    top: 6px;
+  }
+
+  .pill-collab {
+    left: 12px;
+    top: 50px;
+  }
+
+  .pill-discussion {
+    left: 8px;
+    bottom: 12px;
+  }
+}
