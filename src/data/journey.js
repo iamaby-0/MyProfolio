@@ -1,7 +1,7 @@
 export const journeyMilestones = [
   {
-    id: "journey-2018",
-    year: "2018",
+    id: "journey-2012",
+    year: "2012",
     title: "Started School",
     subtitle: "Primary & Middle School",
     description: "Imperial Public School, Hathwa",

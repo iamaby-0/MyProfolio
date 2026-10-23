@@ -3,7 +3,7 @@ import { Cpu, BookOpen, Users2, ShieldCheck, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { XIcon, InstagramIcon, GithubIcon, LeetCodeIcon } from '../common/BrandIcons';
 import { profileData } from '../../data/profile';
-import avatarImg from '../../assets/developer-avatar.jpg';
+import avatarImg from '../../assets/developer-avatar.png';
 import './AboutHero.css';
 
 export default function AboutHero() {
@@ -28,7 +28,7 @@ export default function AboutHero() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <div className="about-eyebrow-badge">
-              <span>◆</span>
+              <span className="section-bullet">•</span>
               <span>ABOUT ME</span>
             </div>
 
@@ -41,8 +41,8 @@ export default function AboutHero() {
             <p className="about-hero-bio">
               I'm Abrar Ahmad, a Computer Science Engineering graduate from Galgotias University.
               I enjoy building practical software, solving real-world problems, and exploring new
-              technologies. My focus is on backend development, full-stack applications, and
-              AI-powered solutions.
+              technologies. My focus is on backend development, full-stack applications, databases,
+              and AI-powered solutions.
             </p>
 
             {/* Social Links Row */}
@@ -56,6 +56,7 @@ export default function AboutHero() {
                 aria-label="X"
               >
                 <XIcon size={16} />
+                <span className="social-label">X</span>
               </a>
 
               <a

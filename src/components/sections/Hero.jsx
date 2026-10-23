@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Button from '../common/Button';
 import SocialLinks from '../common/SocialLinks';
 import { profileData } from '../../data/profile';
-import avatarImg from '../../assets/developer-avatar.jpg';
+import avatarImg from '../../assets/developer-avatar.png';
 import './Hero.css';
 
 const qualityIcons = {
@@ -43,7 +43,7 @@ export default function Hero({ onProjectsClick }) {
             {/* Top Indicator */}
             <div className="hero-badge-row">
               <span className="hero-badge">
-                <span className="hero-badge-diamond">◆</span>
+                <span className="hero-badge-diamond">•</span>
                 {eyebrow || 'SOFTWARE DEVELOPER • INDIA'}
               </span>
             </div>
@@ -69,9 +69,12 @@ export default function Hero({ onProjectsClick }) {
                 href="#projects"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (onProjectsClick) onProjectsClick();
-                  const elem = document.getElementById('projects');
-                  if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                  if (onProjectsClick) {
+                    onProjectsClick();
+                  } else {
+                    const elem = document.getElementById('projects');
+                    if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 icon={ArrowRight}
                 iconPosition="right"
@@ -120,14 +123,14 @@ export default function Hero({ onProjectsClick }) {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M 5 30 Q 30 10 50 25"
+                    d="M 5 28 Q 28 8 48 24"
                     stroke="#35E9A0"
                     strokeWidth="2"
                     strokeLinecap="round"
                     fill="none"
                   />
                   <path
-                    d="M 44 26 L 52 26 L 49 18"
+                    d="M 42 24 L 50 24 L 47 16"
                     stroke="#35E9A0"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -144,51 +147,53 @@ export default function Hero({ onProjectsClick }) {
                   alt="Abrar Ahmad Developer Avatar"
                   className="hero-portrait-img"
                   loading="eager"
-                  width="280"
-                  height="310"
+                  width="320"
+                  height="360"
                 />
               </div>
 
-              {/* Code Snippet Card */}
-              <div className="hero-code-card">
-                <div>
-                  <span className="code-keyword">const</span>{' '}
-                  <span className="code-variable">developer</span> = &#123;
+              {/* Right Side Floating Stack: Code Card + 4 Vertical Qualities */}
+              <div className="hero-floating-stack">
+                <div className="hero-code-card">
+                  <div>
+                    <span className="code-keyword">const</span>{' '}
+                    <span className="code-variable">developer</span> = &#123;
+                  </div>
+                  <div style={{ paddingLeft: '14px' }}>
+                    <span className="code-property">name:</span>{' '}
+                    <span className="code-string">"{codeSnippet.name}"</span>,
+                  </div>
+                  <div style={{ paddingLeft: '14px' }}>
+                    <span className="code-property">role:</span>{' '}
+                    <span className="code-string">"{codeSnippet.role}"</span>,
+                  </div>
+                  <div style={{ paddingLeft: '14px' }}>
+                    <span className="code-property">skills:</span> [
+                    <span className="code-string">"{codeSnippet.skills[0]}"</span>,{' '}
+                    <span className="code-string">"{codeSnippet.skills[1]}"</span>,{' '}
+                    <span className="code-string">"{codeSnippet.skills[2]}"</span>],
+                  </div>
+                  <div style={{ paddingLeft: '14px' }}>
+                    <span className="code-property">goal:</span>{' '}
+                    <span className="code-string">"{codeSnippet.goal}"</span>
+                  </div>
+                  <div>&#125;;</div>
                 </div>
-                <div style={{ paddingLeft: '14px' }}>
-                  <span className="code-property">name:</span>{' '}
-                  <span className="code-string">"{codeSnippet.name}"</span>,
-                </div>
-                <div style={{ paddingLeft: '14px' }}>
-                  <span className="code-property">role:</span>{' '}
-                  <span className="code-string">"{codeSnippet.role}"</span>,
-                </div>
-                <div style={{ paddingLeft: '14px' }}>
-                  <span className="code-property">skills:</span> [
-                  <span className="code-string">"{codeSnippet.skills[0]}"</span>,{' '}
-                  <span className="code-string">"{codeSnippet.skills[1]}"</span>,{' '}
-                  <span className="code-string">"{codeSnippet.skills[2]}"</span>],
-                </div>
-                <div style={{ paddingLeft: '14px' }}>
-                  <span className="code-property">goal:</span>{' '}
-                  <span className="code-string">"{codeSnippet.goal}"</span>
-                </div>
-                <div>&#125;;</div>
-              </div>
 
-              {/* Professional Qualities List */}
-              <div className="hero-qualities">
-                {qualities.map((q) => {
-                  const IconComp = qualityIcons[q.icon] || Code2;
-                  return (
-                    <div key={q.label} className="hero-quality-pill">
-                      <span className="hero-quality-icon">
-                        <IconComp size={15} />
-                      </span>
-                      <span>{q.label}</span>
-                    </div>
-                  );
-                })}
+                {/* Professional Qualities Vertical Stack */}
+                <div className="hero-qualities-vertical">
+                  {qualities.map((q) => {
+                    const IconComp = qualityIcons[q.icon] || Code2;
+                    return (
+                      <div key={q.label} className="hero-quality-pill">
+                        <span className="hero-quality-icon">
+                          <IconComp size={15} />
+                        </span>
+                        <span className="hero-quality-label">{q.label}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </motion.div>
