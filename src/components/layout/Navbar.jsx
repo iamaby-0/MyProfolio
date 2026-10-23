@@ -17,31 +17,7 @@ export default function Navbar({ currentPage = 'home', onNavigate, onContactClic
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (
-      currentPage === 'about' ||
-      currentPage === 'projects' ||
-      currentPage === 'skills' ||
-      currentPage === 'experience' ||
-      currentPage === 'contact'
-    ) {
-      setActiveSection(currentPage);
-      return;
-    }
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
-      for (let i = navItems.length - 1; i >= 0; i--) {
-        const item = navItems[i];
-        const section = document.getElementById(item.id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(item.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    setActiveSection(currentPage);
   }, [currentPage]);
 
   const handleNavClick = (e, item) => {

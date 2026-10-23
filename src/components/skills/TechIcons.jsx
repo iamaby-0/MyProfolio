@@ -143,18 +143,19 @@ export const TechIcons = {
   ),
 
   'Express.js': () => (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-      <rect width="24" height="24" rx="6" fill="#18272C" stroke="#24363B" />
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="6" fill="#142024" stroke="#24363B" strokeWidth="1" />
       <text
-        x="12"
-        y="15.5"
-        fontFamily="monospace"
-        fontWeight="bold"
-        fontSize="11"
-        fill="#F1F5F4"
+        x="16"
+        y="19"
+        fontFamily="system-ui, -apple-system, sans-serif"
+        fontWeight="700"
+        fontSize="8"
+        fill="#E5EAE8"
         textAnchor="middle"
+        letterSpacing="0.2"
       >
-        ex
+        Express
       </text>
     </svg>
   ),
@@ -618,6 +619,54 @@ export const TechIcons = {
         stroke="#35E9A0"
         strokeWidth="1.3"
       />
+    </svg>
+  ),
+
+  // Aliases for Project Tags
+  'Gemini AI': () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"
+        fill="#4E75F8"
+      />
+    </svg>
+  ),
+  'Gemini API': () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"
+        fill="#4E75F8"
+      />
+    </svg>
+  ),
+  AI: () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3z"
+        fill="#35E9A0"
+      />
+      <path
+        d="M18 14l.9 2.1L21 17l-2.1.9L18 20l-.9-2.1L15 17l2.1-.9L18 14z"
+        fill="#4FFFB0"
+      />
+    </svg>
+  ),
+  'Groq API': () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" fill="#F55036" fillOpacity="0.15" />
+      <path
+        d="M14.5 8C13.8 7.4 12.9 7 11.8 7 9.2 7 7.2 9.1 7.2 11.8c0 2.6 2 4.7 4.6 4.7.9 0 1.8-.3 2.5-.8l1.4 1.4c-.2.4-.7.9-1.5.9h-1.5"
+        stroke="#F55036"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+  'Chart.js': () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <rect x="4" y="13" width="3" height="7" rx="1" fill="#FF6384" />
+      <rect x="10.5" y="8" width="3" height="12" rx="1" fill="#36A2EB" />
+      <rect x="17" y="4" width="3" height="16" rx="1" fill="#FFCE56" />
     </svg>
   )
 };

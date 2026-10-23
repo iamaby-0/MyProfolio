@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ExternalLink, Star } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { GithubIcon } from '../common/BrandIcons';
 import { TechIcons } from '../skills/TechIcons';
 import './ProjectCard.css';
@@ -9,7 +9,6 @@ export default function ProjectCard({ project }) {
     title,
     description,
     thumbnail,
-    featured,
     technologies,
     tags,
     liveUrl,
@@ -25,13 +24,6 @@ export default function ProjectCard({ project }) {
     <article className="project-card">
       {/* 16:9 Thumbnail with subtle hover zoom */}
       <div className="project-thumb-wrapper">
-        {featured && (
-          <div className="project-featured-badge">
-            <Star size={11} fill="currentColor" />
-            <span>Featured</span>
-          </div>
-        )}
-
         <img
           src={thumbnail}
           alt={`${title} Interface Preview`}

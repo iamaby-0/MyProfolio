@@ -31,8 +31,11 @@ export default function Home({ onNavigate }) {
         <Hero
           onContactClick={openContact}
           onProjectsClick={() => {
-            const el = document.getElementById('projects');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
+            if (onNavigate) {
+              onNavigate('projects');
+            } else {
+              window.location.hash = '#projects';
+            }
           }}
         />
 
@@ -43,7 +46,7 @@ export default function Home({ onNavigate }) {
         <FeaturedProjects onNavigate={onNavigate} />
 
         {/* Section 5: Technology Stack */}
-        <TechStack />
+        <TechStack onNavigate={onNavigate} />
 
         {/* Section 6: Education and Experience Preview */}
         <EducationExperience onNavigate={onNavigate} />
@@ -58,7 +61,7 @@ export default function Home({ onNavigate }) {
         />
 
         {/* Section 9: Contact Call to Action */}
-        <ContactCTA onContactClick={openContact} />
+        <ContactCTA onNavigate={onNavigate} onContactClick={openContact} />
       </main>
 
       {/* Section 10: Footer */}

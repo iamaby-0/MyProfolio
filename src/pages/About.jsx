@@ -45,7 +45,7 @@ export default function About({ onNavigate }) {
         <Hobbies />
 
         {/* Section 8: Contact CTA */}
-        <ContactCTA onContactClick={openContact} />
+        <ContactCTA onNavigate={onNavigate} onContactClick={openContact} />
       </main>
 
       {/* Section 9: Shared Footer */}

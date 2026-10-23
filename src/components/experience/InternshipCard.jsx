@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Calendar,
   Clock,
-  CheckCircle2,
   Copy,
   Check,
   Eye,

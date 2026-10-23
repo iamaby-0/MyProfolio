@@ -1,26 +1,26 @@
 import React from 'react';
-import { GraduationCap, Briefcase, ArrowRight, BookOpen, School } from 'lucide-react';
+import { GraduationCap, Briefcase, ArrowRight, BookOpen, School, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
-import SectionTitle from '../common/SectionTitle';
 import { educationData } from '../../data/education';
-import { experienceData } from '../../data/experience';
+import { internshipsData } from '../../data/experience';
 import './EducationExperience.css';
 
 const eduIcons = [GraduationCap, BookOpen, School];
 
-export default function EducationExperience({ isAboutPage = false }) {
-  const internship = experienceData[0];
+export default function EducationExperience({ isAboutPage = false, onNavigate }) {
+  const handleViewExperience = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('experience');
+    } else {
+      window.location.hash = '#experience';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="experience" className={`edu-exp-section ${isAboutPage ? 'about-variant' : ''}`}>
       <div className="container">
-        {!isAboutPage && (
-          <SectionTitle
-            title="Education"
-            subtitle="Academic milestones and practical full-stack software engineering experience."
-          />
-        )}
-
         <div className="edu-exp-grid">
           {/* Education Card */}
           <motion.div
@@ -31,20 +31,28 @@ export default function EducationExperience({ isAboutPage = false }) {
             transition={{ duration: 0.4 }}
           >
             <div className="card-top-header" style={{ justifyContent: 'space-between' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span className="card-header-dot">◆</span>
+              <div className="card-header-brand">
+                <span className="card-header-icon-box">
+                  <GraduationCap size={18} />
+                </span>
                 <h3 className="card-top-title">Education</h3>
               </div>
 
-              <a
-                href="#education"
-                className="section-link"
-                style={{ fontSize: '0.84rem' }}
-                onClick={(e) => e.preventDefault()}
-              >
-                <span>View Details</span>
-                <ArrowRight size={14} />
-              </a>
+              {isAboutPage && (
+                <a
+                  href="#journey"
+                  className="section-link"
+                  style={{ fontSize: '0.88rem' }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.querySelector('.journey-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <span>View Details</span>
+                  <ArrowRight size={14} />
+                </a>
+              )}
             </div>
 
             <div className="edu-items-list">
@@ -64,9 +72,7 @@ export default function EducationExperience({ isAboutPage = false }) {
                         {edu.score && (
                           <>
                             <span className="edu-divider">|</span>
-                            <span className="edu-score-text">
-                              {edu.score.includes('CGPA') ? edu.score : `${edu.score}`}
-                            </span>
+                            <span className="edu-score-text">{edu.score}</span>
                           </>
                         )}
                       </div>
@@ -86,52 +92,86 @@ export default function EducationExperience({ isAboutPage = false }) {
             transition={{ duration: 0.4, delay: 0.1 }}
           >
             <div className="card-top-header" style={{ justifyContent: 'space-between' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span className="card-header-dot">◆</span>
+              <div className="card-header-brand">
+                <span className="card-header-icon-box">
+                  <Briefcase size={18} />
+                </span>
                 <h3 className="card-top-title">Experience</h3>
               </div>
 
               <a
                 href="#experience"
                 className="section-link"
-                style={{ fontSize: '0.84rem' }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (onNavigate) {
-                    onNavigate('experience');
-                  } else {
-                    window.location.hash = '#experience';
-                  }
-                }}
+                style={{ fontSize: '0.88rem' }}
+                onClick={handleViewExperience}
               >
                 <span>View Details</span>
                 <ArrowRight size={14} />
               </a>
             </div>
 
-            <div className="exp-body">
-              <div className="exp-header-row">
-                <div className="exp-header-icon-circle">
-                  <Briefcase size={18} />
-                </div>
-                <div>
-                  <h4 className="exp-role-title">{internship.role}</h4>
-                  <div className="exp-org-row">
-                    <span className="exp-org">{internship.organization}</span>
+            <div className="exp-items-list">
+              {internshipsData.map((internship, index) => (
+                <div key={internship.id} className={`exp-entry ${index > 0 ? 'exp-entry-subsequent' : ''}`}>
+                  <div className="exp-header-row">
+                    <div className="exp-header-icon-circle">
+                      <Briefcase size={18} />
+                    </div>
+                    <div className="exp-header-text">
+                      <h4 className="exp-role-title">
+                        {internship.title} <span className="exp-role-type">intern</span>
+                      </h4>
+                      <div className="exp-org-row">
+                        <span className="exp-org">{internship.organization}</span>
+                      </div>
+                      <p className="exp-dates">
+                        {internship.period} <span className="edu-divider">|</span> {internship.duration} · {internship.status}
+                      </p>
+                    </div>
                   </div>
-                  <p className="exp-dates">
-                    {internship.duration} <span className="edu-divider">|</span> {internship.location}
-                  </p>
-                </div>
-              </div>
 
-              <ul className="exp-bullet-list">
-                {internship.points.map((point, index) => (
-                  <li key={index} className="exp-bullet-item">
-                    {point}
-                  </li>
-                ))}
-              </ul>
+                  <ul className="exp-bullet-list">
+                    {index === 0 ? (
+                      <>
+                        <li className="exp-bullet-item">
+                          Completed a 10-week virtual internship in Java Full Stack Development through the AICTE–EduSkills program.
+                        </li>
+                        <li className="exp-bullet-item">
+                          Gained hands-on knowledge of Java, RESTful APIs, OOP, and relational databases.
+                        </li>
+                        <li className="exp-bullet-item">
+                          Received verified official certificate from AICTE and EduSkills Academy.
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li className="exp-bullet-item">
+                          Completed a 10-week virtual internship focused on full stack web development.
+                        </li>
+                        <li className="exp-bullet-item">
+                          Gained practical skills in HTML, CSS, JavaScript, Node.js and database systems.
+                        </li>
+                        <li className="exp-bullet-item">
+                          Received verified official certificate from AICTE and EduSkills.
+                        </li>
+                      </>
+                    )}
+                  </ul>
+
+                  {internship.certificateLink && (
+                    <a
+                      href={internship.certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exp-cert-badge-link"
+                      title="View Verified Certificate"
+                    >
+                      <ExternalLink size={13} />
+                      <span>Verified Certificate</span>
+                    </a>
+                  )}
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

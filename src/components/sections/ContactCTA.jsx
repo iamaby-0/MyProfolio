@@ -1,11 +1,22 @@
 import React from 'react';
-import { Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { profileData } from '../../data/profile';
 import './ContactCTA.css';
 
-export default function ContactCTA({ onContactClick }) {
+export default function ContactCTA({ onNavigate, onContactClick }) {
   const { email, location, availabilityText } = profileData;
+
+  const handleGetInTouch = () => {
+    if (onNavigate) {
+      onNavigate('contact');
+    } else if (onContactClick) {
+      onContactClick();
+    } else {
+      window.location.hash = '#contact';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="contact" className="contact-banner-section">
@@ -55,7 +66,7 @@ export default function ContactCTA({ onContactClick }) {
                 </div>
 
                 <div className="contact-meta-row">
-                  <Clock size={16} />
+                  <Calendar size={16} />
                   <span>{availabilityText}</span>
                 </div>
               </div>
@@ -63,7 +74,7 @@ export default function ContactCTA({ onContactClick }) {
               <button
                 type="button"
                 className="contact-action-btn-large"
-                onClick={onContactClick}
+                onClick={handleGetInTouch}
               >
                 <span>Get in Touch</span>
                 <ArrowRight size={16} />

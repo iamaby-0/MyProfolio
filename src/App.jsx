@@ -40,9 +40,9 @@ function App() {
     }
 
     if (currentPage === 'about') {
-      document.title = 'About Me | Aby.Dev — Abrar Ahmad';
+      document.title = 'About | Aby.Dev';
       metaDesc.content =
-        'Learn about Abrar Ahmad, the developer behind Aby.Dev, including his Computer Science education, full-stack internship, technical skills, projects and interests.';
+        'Learn about Abrar Ahmad, a Computer Science Engineering graduate specializing in Java, backend systems, full-stack applications, and AI-powered products.';
     } else if (currentPage === 'projects') {
       document.title = 'Projects | Aby.Dev — Abrar Ahmad';
       metaDesc.content =

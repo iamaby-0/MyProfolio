@@ -49,14 +49,13 @@ export const projectsData = [
     slug: "ai-finance-tracker",
     title: "AI-Powered Finance Tracker",
     description:
-      "A full-stack finance tracker for managing expenses, income and budgets, with interactive analytics and AI-powered financial insights.",
+      "Full-stack finance tracker with expense, income, budget management, analytics and AI-powered insights.",
     thumbnail: financeImg,
     featured: true,
     categories: ["Full Stack", "Backend", "AI / ML", "Web App"],
     technologies: [
       "React.js",
       "Node.js",
-      "Express.js",
       "MongoDB",
       "Groq API",
       "Chart.js"
@@ -69,17 +68,17 @@ export const projectsData = [
   {
     id: "interview-portal",
     slug: "ai-interview-portal",
-    title: "AI-Driven Interview Portal",
+    title: "AI Driven Interview Portal",
     description:
-      "A real-time voice-based AI interview platform designed to automate initial candidate screening through resume-aware questions and speech interaction.",
+      "Real-time voice-based AI interview platform for automated candidate screening.",
     thumbnail: interviewImg,
     featured: true,
     categories: ["Full Stack", "Backend", "AI / ML", "Web App"],
     technologies: [
       "React.js",
-      "Gemini 1.5 Flash",
-      "Deepgram Flux",
-      "Deepgram Aura"
+      "Gemini AI",
+      "Deepgram",
+      "AI"
     ],
     liveUrl: "https://interview-portal-demo.vercel.app",
     githubUrl: "https://github.com/iamaby-0",
@@ -91,7 +90,7 @@ export const projectsData = [
     slug: "maths-doubt-solver",
     title: "Maths Doubt Solver",
     description:
-      "An AI-powered application that helps users solve mathematics problems and understand step-by-step explanations.",
+      "Solve math problems using AI with step-by-step explanations.",
     thumbnail: mathImg,
     featured: true,
     categories: ["AI / ML", "Frontend", "Web App"],

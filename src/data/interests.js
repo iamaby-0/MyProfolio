@@ -15,24 +15,24 @@ export const interestsData = {
     },
     {
       title: "Learn New Technologies",
-      description: "Always exploring and learning new tools and frameworks.",
+      description: "I'm always exploring new tools and improving my development skills.",
       icon: "BookOpen"
     },
     {
       title: "Build Useful Products",
-      description: "I like turning ideas into applications that people actually use.",
+      description: "I like turning ideas into applications that people can use.",
       icon: "Rocket"
     }
   ],
   hobbies: [
     {
       title: "Gaming",
-      description: "PUBG Mobile, Valorant and other games.",
+      description: "PUBG Mobile, Valorant, and other games.",
       icon: "Gamepad2"
     },
     {
       title: "Sci-Fi Movies",
-      description: "Enjoy watching sci-fi movies and web series.",
+      description: "Enjoy watching science-fiction movies and web series.",
       icon: "Film"
     },
     {
@@ -42,7 +42,7 @@ export const interestsData = {
     },
     {
       title: "Gym & Fitness",
-      description: "Regular workout and staying healthy.",
+      description: "Regular workouts and staying active.",
       icon: "Dumbbell"
     }
   ]

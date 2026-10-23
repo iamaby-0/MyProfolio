@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import ProjectCard from '../projects/ProjectCard';
 import { projectsData } from '../../data/projects';
-import { profileData } from '../../data/profile';
 import './FeaturedProjects.css';
 
 export default function FeaturedProjects({ onNavigate }) {

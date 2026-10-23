@@ -13,7 +13,7 @@ export default function SocialLinks({ compact = false, showLabels = true, classN
       name: 'X',
       url: socials.x.url,
       icon: XIcon,
-      label: null // icon only in hero row
+      label: 'X'
     },
     {
       id: 'instagram',
@@ -35,6 +35,13 @@ export default function SocialLinks({ compact = false, showLabels = true, classN
       url: socials.leetcode.url,
       icon: LeetCodeIcon,
       label: 'LeetCode'
+    },
+    {
+      id: 'email',
+      name: 'Email',
+      url: socials.email.url,
+      icon: Mail,
+      label: 'Email'
     }
   ];
 

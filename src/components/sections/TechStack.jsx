@@ -1,20 +1,34 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import SkillCard from '../skills/SkillCard';
-import { skillsData } from '../../data/skills';
 import './TechStack.css';
 
-const categories = ['All', 'Languages', 'Frontend', 'Backend', 'Databases', 'Tools'];
+// Exact 12 primary technologies matching reference screenshot row
+const homeTechList = [
+  { name: 'Java', icon: 'Java', color: '#E76F00' },
+  { name: 'JavaScript', icon: 'JavaScript', color: '#F7DF1E' },
+  { name: 'C++', icon: 'C++', color: '#00599C' },
+  { name: 'React.js', icon: 'React.js', color: '#61DAFB' },
+  { name: 'Node.js', icon: 'Node.js', color: '#339933' },
+  { name: 'Express.js', icon: 'Express.js', color: '#A5B4B8' },
+  { name: 'MongoDB', icon: 'MongoDB', color: '#47A248' },
+  { name: 'MySQL', icon: 'MySQL', color: '#4479A1' },
+  { name: 'Git', icon: 'Git', color: '#F05032' },
+  { name: 'GitHub', icon: 'GitHub', color: '#F1F5F4' },
+  { name: 'VS Code', icon: 'VS Code', color: '#007ACC' },
+  { name: 'Android Studio', icon: 'Android Studio', color: '#3DDC84' }
+];
 
-export default function TechStack() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [showAllCategories, setShowAllCategories] = useState(false);
-
-  const filteredSkills =
-    selectedCategory === 'All'
-      ? skillsData.featured
-      : skillsData.featured.filter((s) => s.category === selectedCategory);
+export default function TechStack({ onNavigate }) {
+  const handleViewAllSkills = () => {
+    if (onNavigate) {
+      onNavigate('skills');
+    } else {
+      window.location.hash = '#skills';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="skills" className="tech-stack-section">
@@ -22,67 +36,23 @@ export default function TechStack() {
         <SectionTitle
           title="Tech Stack"
           subtitle="Technologies and tools I use to build software."
-          linkText={showAllCategories ? 'Show Grid View' : 'View All Skills'}
-          onLinkClick={() => setShowAllCategories(!showAllCategories)}
+          linkText="View All Skills"
+          onLinkClick={handleViewAllSkills}
         />
 
-        {/* Filter Tabs */}
-        {!showAllCategories && (
-          <div className="tech-tabs-row" role="tablist">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`tech-tab-btn ${selectedCategory === cat ? 'active' : ''}`}
-                onClick={() => setSelectedCategory(cat)}
-                role="tab"
-                aria-selected={selectedCategory === cat}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Featured Tech Grid */}
-        {!showAllCategories ? (
-          <div className="tech-grid">
-            {filteredSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
-              >
-                <SkillCard skill={skill} />
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          /* Detailed Categorized View */
-          <motion.div
-            className="tech-categories-container"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            {skillsData.categories.map((category) => (
-              <div key={category.name} className="tech-cat-card">
-                <h3 className="tech-cat-title">
-                  <span>◆</span>
-                  <span>{category.name}</span>
-                </h3>
-                <div className="tech-cat-items">
-                  {category.items.map((item) => (
-                    <span key={item} className="tech-cat-item-badge">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        )}
+        <div className="tech-grid">
+          {homeTechList.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.3, delay: index * 0.03 }}
+            >
+              <SkillCard skill={skill} />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

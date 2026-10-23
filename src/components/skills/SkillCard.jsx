@@ -3,11 +3,13 @@ import { TechIcons } from './TechIcons';
 import { Code } from 'lucide-react';
 import './SkillCard.css';
 
+const DefaultSkillIcon = () => <Code size={26} color="#35E9A0" />;
+
 export default function SkillCard({ skill }) {
   const IconComponent =
     TechIcons[skill.icon] ||
     TechIcons[skill.name] ||
-    (() => <Code size={26} color={skill.color || '#35E9A0'} />);
+    DefaultSkillIcon;
 
   return (
     <div

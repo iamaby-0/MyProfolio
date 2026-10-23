@@ -35,11 +35,13 @@
 }
 
 .contact-banner-left {
-  max-width: 580px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 520px;
 }
 
 .contact-banner-heading {
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.2;
@@ -55,8 +57,8 @@
 .contact-banner-right {
   display: flex;
   align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
+  gap: 32px;
+  flex-shrink: 0;
 }
 
 .contact-meta-col {

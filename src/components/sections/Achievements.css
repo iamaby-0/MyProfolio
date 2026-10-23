@@ -39,7 +39,7 @@
 .achieve-icon-wrapper {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-md);
+  border-radius: 50%;
   background-color: var(--green-surface);
   border: 1px solid rgba(53, 233, 160, 0.3);
   color: var(--mint-primary);

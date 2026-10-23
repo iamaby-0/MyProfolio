@@ -13,7 +13,7 @@ export default function SectionTitle({
     <div className={`section-header ${className}`}>
       <div className="section-header-left">
         <h2 className="section-title">
-          <span className="section-bullet">◆</span>
+          <span className="section-bullet">•</span>
           {title}
         </h2>
         {subtitle && <p className="section-subtitle">{subtitle}</p>}

@@ -20,9 +20,9 @@ export const profileData = {
   resumePath: "/resume.pdf",
   resumeDriveUrl: "https://drive.google.com/file/d/10ldyKzdbhUh_y6EceIs-uGV3QxNQpOhy/view?usp=sharing",
   summary:
-    "I build full-stack applications, backend systems and AI-powered products with clean, maintainable code. Skilled in Java, JavaScript, React.js, Node.js and MongoDB.",
+    "I build full-stack applications, backend systems and AI-powered products with clean, maintainable code. I work with Java, JavaScript, React.js, Node.js and databases to build practical software solutions.",
   aboutExtended:
-    "I'm a Computer Science Engineering graduate who enjoys building practical software, solving technical problems and exploring new technologies. My work focuses on backend development, full-stack applications and AI-powered solutions.",
+    "I'm a Computer Science Engineering graduate who enjoys building practical software, solving technical problems and exploring new technologies. My focus is on backend development, full-stack applications and AI-powered solutions.",
   socials: {
     x: {
       name: "X",
@@ -53,7 +53,7 @@ export const profileData = {
   codeSnippet: {
     name: "Abrar Ahmad",
     role: "Software Developer",
-    skills: ["Java", "React.js", "Node.js"],
+    skills: ["Java", "React", "Node.js"],
     goal: "Build impactful products"
   },
   qualities: [
@@ -72,23 +72,23 @@ export const profileData = {
     },
     {
       id: "projects",
-      value: "2+",
-      label: "Major Projects",
+      value: "3",
+      label: "Featured Projects",
       supporting: "Full-Stack & AI Systems",
       icon: "CodeXml"
     },
     {
       id: "internship",
-      value: "1",
-      label: "Internship",
-      supporting: "AICTE – EduSkills Foundation",
+      value: "2",
+      label: "Completed Virtual Internships",
+      supporting: "AICTE – EduSkills Academy",
       icon: "Briefcase"
     },
     {
       id: "communities",
       value: "48K+ & 23K+",
       label: "Telegram Communities",
-      supporting: "Two separate tech communities",
+      supporting: "Themes4MIUI & MiuithemesX",
       icon: "Users2"
     }
   ]

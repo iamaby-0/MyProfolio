@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Send, Mail } from 'lucide-react';
+import { X, Copy, Check, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { profileData } from '../../data/profile';
 import './ContactModal.css';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, Globe, GraduationCap, ArrowRight } from 'lucide-react';
+import { Send, Globe, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import './Achievements.css';
@@ -53,7 +53,6 @@ export default function Achievements() {
       <div className="container">
         <SectionTitle
           title="Achievements & Communities"
-          subtitle="Community leadership, tech publishing, and verified academic milestones."
           linkText="View All"
           onLinkClick={() => window.open('https://hyperosthemes.com/', '_blank')}
         />

@@ -28,7 +28,6 @@ export default function AboutPreview({ onContactClick, onNavigateAbout }) {
       <div className="container">
         <SectionTitle
           title="A Little About Me"
-          subtitle="Engineering approach and core technical mindset."
         />
 
         <div className="about-preview-split">
