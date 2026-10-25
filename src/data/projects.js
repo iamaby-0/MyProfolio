@@ -60,8 +60,8 @@ export const projectsData = [
       "Groq API",
       "Chart.js"
     ],
-    liveUrl: "https://finance-tracker-demo.vercel.app",
-    githubUrl: "https://github.com/iamaby-0",
+    liveUrl: "https://my-finance-tracker-omega-ten-32.vercel.app/",
+    githubUrl: "https://github.com/iamaby-0/finance-tracker.git",
     actionType: "live",
     actionLabel: "Live Demo →"
   },
